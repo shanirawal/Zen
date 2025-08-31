@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Navigation function
     function navigateToLogin() {
-        window.location.href = 'login.html';
+        window.location.href = 'login.php';
     }
     
     // Add event listeners

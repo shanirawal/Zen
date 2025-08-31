@@ -32,18 +32,18 @@
       </div>
 
       <!-- Login Form -->
-      <form id="loginForm" class="flex flex-col mt-12 w-[90%] gap-4">
-        <input class="bg-white text-zinc-950 px-4 py-4 rounded-md placeholder-gray-500" type="email" placeholder="Enter your email" />
-        <input class="bg-white text-zinc-950 px-4 py-4 rounded-md placeholder-gray-500" type="password" placeholder="Enter your password" />
+      <form id="loginForm" class="flex flex-col mt-12 w-[90%] gap-4" action="signin.php" method="POST">
+        <input class="bg-white text-zinc-950 px-4 py-4 rounded-md placeholder-gray-500" type="email" name="email" placeholder="Enter your email" />
+        <input class="bg-white text-zinc-950 px-4 py-4 rounded-md placeholder-gray-500" type="password" name="password" placeholder="Enter your password" />
         <button class="bg-[#2d0032] hover:bg-[#4e2a50] hover:scale-105 transition-all duration-200 w-[30%] self-center px-4 py-4 rounded-md text-white" type="submit">Login</button>
       </form>
 
       <!-- Signup Form -->
-      <form id="signupForm" class="hidden    flex-col mt-12 w-[90%] gap-4">
-        <input class="bg-white text-zinc-950 px-4 py-4 rounded-md placeholder-gray-500" type="text" placeholder="Enter a username" />
-        <input class="bg-white text-zinc-950 px-4 py-4 rounded-md placeholder-gray-500" type="email" placeholder="Enter your email" />
-        <input class="bg-white text-zinc-950 px-4 py-4 rounded-md placeholder-gray-500" type="password" placeholder="Enter your password" />
-        <button class="bg-[#2d0032] hover:bg-[#4e2a50] hover:scale-105 transition-all duration-200 w-[30%] self-center px-4 py-4 rounded-md text-white" type="submit">Signup</button>
+      <form id="signupForm" class="hidden    flex-col mt-12 w-[90%] gap-4" action="signup.php" method="POST">
+        <input class="bg-white text-zinc-950 px-4 py-4 rounded-md placeholder-gray-500" type="text" name="username" placeholder="Enter a username" />
+        <input class="bg-white text-zinc-950 px-4 py-4 rounded-md placeholder-gray-500" type="email" name="email" placeholder="Enter your email" />
+        <input class="bg-white text-zinc-950 px-4 py-4 rounded-md placeholder-gray-500" type="password" name="password" placeholder="Enter your password" />
+        <button class="bg-[#2d0032] hover:bg-[#4e2a50] hover:scale-105 transition-all duration-200 w-[30%] self-center px-4 py-4 rounded-md text-white" type="submit">Sign-up</button>
       </form>
     </div>
   </div>
