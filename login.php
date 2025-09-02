@@ -18,7 +18,7 @@
     </div>
 
     <!-- Right Panel -->
-    <div class="flex flex-col items-center w-full lg:w-1/2 p-6 lg:p-10 `">
+    <div class="flex flex-col items-center w-full lg:w-1/2 p-6 lg:p-10 ">
       <!-- Tabs -->
       <div class="flex items-center overflow-hidden relative bg-zinc-950 w-full max-w-sm justify-around px-6 rounded-md py-2 text-purple-900 mb-8">
         <p id="loginTab" class="tab-btn z-10 px-4 py-2 cursor-pointer text-purple-900 select-none">Login</p>
