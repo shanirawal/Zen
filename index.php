@@ -29,7 +29,7 @@
     </nav>
 
     <!-- hero section -->
-    <section class="hero-section bg-[url('/assets/bg1.jpg')] bg-cover bg-center   flex flex-col justify-center items-center min-h-screen min-w-full relative ">
+    <section style="background-image: url('./assets/bg1.jpg');" class="hero-section  bg-cover bg-center   flex flex-col justify-center items-center min-h-screen min-w-full relative ">
 
         <div id="starfield"></div>
         
