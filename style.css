@@ -11,8 +11,22 @@ html, body {
     overflow-x: hidden;
     
 }
+
+@font-face {
+  font-family: 'CinemaSunday';
+  src: url('./fonts/cinemasundaydemofont-Regular.woff2') format('woff2'),
+       url('./fonts/cinemasundaydemofont-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-cinema {
+  font-family: 'CinemaSunday', serif;
+}
+
 .bg-primary {
-  background-color: #6d4a75;
+  background-color: #70507E;
 }
 
 /* Tab functionality styles */
@@ -44,9 +58,7 @@ html, body {
   display: none !important;
 }
 
-.font-cinzel{
-    font-family: "Cinzel Decorative", serif;
-}
+
 
 @keyframes planet-updown {
   0% { transform: translateY(0); }
@@ -94,107 +106,75 @@ html, body {
 
 /* feature cards */
 
-.notification {
-  display: flex;
-  flex-direction: column;
-  isolation: isolate;
-  position: relative;
-  width: 18rem;
-  height: 8rem;
-  background: #29292c;
-  border-radius: 1rem;
-  overflow: hidden;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 16px;
-  --gradient: linear-gradient(to bottom, #2eadff, #3d83ff, #7e61ff);
-  --color: #32a6ff
-}
+/* Background Particles */
+    .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+      overflow: hidden;
+    }
 
-.notification:before {
-  position: absolute;
-  content: "";
-  inset: 0.0625rem;
-  border-radius: 0.9375rem;
-  background: #18181b;
-  z-index: 2
-}
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.8), transparent);
+      opacity: 0.3;
+      filter: blur(1px);
+      animation: float 10s infinite linear;
+    }
 
-.notification:after {
-  position: absolute;
-  content: "";
-  width: 0.25rem;
-  inset: 0.65rem auto 0.65rem 0.5rem;
-  border-radius: 0.125rem;
-  background: var(--gradient);
-  transition: transform 300ms ease;
-  z-index: 4;
-}
+    @keyframes float {
+      0% { transform: translateY(0) translateX(0); opacity: 0.3; }
+      50% { opacity: 0.6; }
+      100% { transform: translateY(-100vh) translateX(100px); opacity: 0; }
+    }
 
-.notification:hover:after {
-  transform: translateX(0.15rem)
-}
+    /* Card Glow Effect */
+    .card-glow {
+      transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.4);
+    }
 
-.notititle {
-  color: var(--color);
-  padding: 0.65rem 0.25rem 0.4rem 1.25rem;
-  font-weight: 500;
-  font-size: 1.1rem;
-  transition: transform 300ms ease;
-  z-index: 5;
-}
+    .card-glow:hover {
+      box-shadow: 0 0 0 8px rgba(139, 92, 246, 0.6),
+                  0 0 20px rgba(139, 92, 246, 0.4),
+                  0 0 40px rgba(139, 92, 246, 0.2);
+      transform: translateY(-8px) scale(1.02);
+    }
 
-.notification:hover .notititle {
-  transform: translateX(0.15rem)
-}
+    /* Icon Glow */
+    .icon-glow {
+      filter: drop-shadow(0 0 10px rgba(249, 115, 22, 0.6));
+      transition: transform 0.3s ease;
+    }
 
-.notibody {
-  color: #99999d;
-  padding: 0 1.25rem;
-  transition: transform 300ms ease;
-  z-index: 5;
-}
+    .icon-glow:hover {
+      transform: scale(1.2);
+    }
 
-.notification:hover .notibody {
-  transform: translateX(0.25rem)
-}
+    /* Floating Animation */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
 
-.notiglow,
-.notiborderglow {
-  position: absolute;
-  width: 20rem;
-  height: 20rem;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(circle closest-side at center, white, transparent);
-  opacity: 0;
-  transition: opacity 300ms ease;
-}
+    .animate-float {
+      animation: float 6s ease-in-out infinite;
+    }
 
-.notiglow {
-  z-index: 3;
-}
+    /* Gradient Text */
+    .gradient-text {
+      background: linear-gradient(90deg, #f59e0b, #a855f7);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-.notiborderglow {
-  z-index: 1;
-}
 
-.notification:hover .notiglow {
-  opacity: 0.1
-}
-
-.notification:hover .notiborderglow {
-  opacity: 0.1
-}
-
-.note {
-  color: var(--color);
-  position: fixed;
-  top: 80%;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  font-size: 0.9rem;
-  width: 75%;
-}
 
 
 

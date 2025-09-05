@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
+  </head>
+  <body>
+    <div class="min-h-screen w-full">
+      <nav
+        class="bg-primary font-cinema shadow-lg sticky top-0 z-50 rounded-b-2xl"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-between h-16">
+            <!-- Logo section -->
+            <div
+              class="flex-shrink-0 overflow-hidden cursor-pointer flex items-center"
+            >
+              <img
+                class="h-32 w-auto rounded-full"
+                src="./assets/zenstar1.png"
+                alt="Logo"
+              />
+              <!-- <span class="-ml-4 mt-2 text-xl  text-white">Zenstar</span> -->
+            </div>
+
+            <!-- Desktop navigation -->
+            <div class="hidden md:flex md:items-center md:space-x-8">
+              <a
+                href="#"
+                class="text-zinc-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors duration-200"
+                >Home</a
+              >
+              <a
+                href="#"
+                class="text-zinc-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors duration-200"
+                >Features</a
+              >
+
+              <a
+                href="#"
+                class="text-zinc-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors duration-200"
+                >About</a
+              >
+            </div>
+
+            <!-- User section -->
+            <div class="flex items-center">
+              <!-- User profile (when logged in) -->
+              <div class="flex items-center ml-4 relative" id="user-menu">
+                <button class="flex text-sm rounded-full" id="user-menu-button">
+                  <span
+                    class="h-8 w-8 material-symbols-outlined text-3xl text-white hover:text-zinc-300 transition-all duration-200"
+                    >account_circle</span
+                  >
+                </button>
+
+                <!-- Dropdown menu -->
+                <div
+                  class="hidden absolute right-0 mt-40 w-48 bg-white rounded-md shadow-lg py-1 ring-1 ring-black ring-opacity-5 focus:outline-none"
+                  id="dropdown-menu"
+                >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >Your Profile</a
+                  >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >Settings</a
+                  >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >Sign out</a
+                  >
+                </div>
+              </div>
+
+              <!-- Login/Logout buttons -->
+              <div class="hidden md:flex items-center ml-4 space-x-2">
+                <button
+                  class="bg-[#d60000] hover:bg-[#940101] text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                >
+                  Logout
+                </button>
+              </div>
+
+              <!-- Mobile menu button -->
+              <div class="flex items-center md:hidden ml-4">
+                <button
+                  type="button"
+                  class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100"
+                  id="mobile-menu-button"
+                >
+                  <svg
+                    class="h-6 w-6"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mobile menu -->
+          <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+              <a
+                href="#"
+                class="block px-3 py-2 rounded-md text-base font-medium text-zinc-300 hover:text-white hover:bg-[#7b006981]"
+                >Home</a
+              >
+              <a
+                href="#"
+                class="block px-3 py-2 rounded-md text-base font-medium text-zinc-300 hover:text-white hover:bg-[#7b006981]"
+                >Features</a
+              >
+
+              <a
+                href="#"
+                class="block px-3 py-2 rounded-md text-base font-medium text-zinc-300 hover:text-white hover:bg-[#7b006981]"
+                >About</a
+              >
+              <div class="border-t flex w-full border-gray-200 pt-4">
+                <a
+                  href="#"
+                  class="block mt-2 px-3 py-2 rounded-md w-full text-center text-base font-medium text-white bg-[#d60000] hover:bg-[#940101]"
+                  >Logout</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div
+        class="w-full flex flex-col items-center justify-center relative min-h-screen bg-cover bg-center"
+        style="background-image: url('./assets/starrybgHome.png')"
+      >
+        
+      <div class="flex flex-col items-center w-[60%] text-center">
+        <h1 class="relative text-4xl md:text-6xl text-[#d7b0e7] font-bold -mt-[10rem]  z-10 font-cinema">
+          Numerology Insights
+        </h1>
+        <h2 class="text-2xl mt-1 font-cinema ">Your personality decoded in numbers</h2>
+        <p class="text-zinc-300 mt-7">From leadership and creativity to wisdom and balance—each number reveals a different side of you. Calculate your Life Path Number and explore the traits, strengths, and challenges that make you unique.</p>
+      </div>
+        
+      </div>
+
+      <div class="w-full h-full mb-7 flex flex-col items-center justify-center">
+        <!-- cards -->
+        <div
+          class="w-full mt-[3rem] gap-x-2 gap-y-10 px-[3rem] place-items-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+        >
+          <!-- card 1 -->
+          <div
+            class="bg-[#f6cbf6] hover:scale-105 rounded-lg shadow-lg overflow-hidden max-w-[300px] transition-all duration-300 hover:shadow-xl"
+          >
+            <img
+              src="./assets/ptraits.png"
+              alt="Card image"
+              class="w-full h-48 rounded-b-lg object-cover object-top"
+            />
+            <div class="p-6">
+              <h2 class="text-xl font-bold text-gray-800 mb-2">
+                Unlocking Your True Self Through Numerology
+              </h2>
+              <p class="text-gray-600 mb-4">
+                Discover the unique personality traits hidden in your numbers.
+              </p>
+              <div class="flex items-center justify-center">
+                <button  onclick="window.location.href='personality.html'"
+                  id="card1-explore-btn"
+                  class="bg-primary hover:bg-[#814882] text-white font-medium py-2 px-4 rounded-md transition-colors duration-200"
+                >
+                  Explore Now
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- card 2 -->
+          <div
+            class="bg-[#f6cbf6] hover:scale-105 rounded-lg shadow-lg overflow-hidden max-w-[300px] transition-all duration-300 hover:shadow-xl"
+          >
+            <img
+              src="./assets/chadlean.png"
+              alt="Card image"
+              class="w-full h-48 rounded-b-lg object-cover"
+            />
+            <div class="p-6">
+              <h2 class="text-xl font-bold text-gray-800 mb-2">
+                Chaldean Numerology
+              </h2>
+              <p class="text-gray-600 mb-4">
+                Reveal the hidden vibrations of your name and unlock ancient number wisdom.
+              </p>
+              <div class="flex items-center justify-center">
+                <button onclick="window.location.href='chadlean.html'"
+                  class="bg-primary hover:bg-[#814882] text-white font-medium py-2 px-4 rounded-md transition-colors duration-200"
+                >
+                  Explore Now
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- card 3 -->
+          <div
+            class="bg-[#f6cbf6] hover:scale-105 rounded-lg shadow-lg overflow-hidden max-w-[300px] transition-all duration-300 hover:shadow-xl"
+          >
+            <img
+              src="./assets/planets.png"
+              alt="Card image"
+              class="w-full h-48 rounded-b-lg  object-cover"
+            />
+            <div class="p-6">
+              <h2 class="text-xl font-bold text-gray-800 mb-2">
+                Planetary Allies
+              </h2>
+              <p class="text-gray-600 mb-4">
+                Discover which planets empower your journey and which ones test your path.
+              </p>
+              <div class="flex items-center justify-center">
+                <button onclick="window.location.href='planet.html'"
+                  class="bg-primary hover:bg-[#814882] text-white font-medium py-2 px-4 rounded-md transition-colors duration-200"
+                >
+                  Explore Now
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="home.js"></script>
+  </body>
+</html>

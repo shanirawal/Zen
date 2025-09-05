@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planetary Allies</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+    <div class="bg-[#70507E] rounded-lg shadow-md p-8 max-w-md w-full">
+        <h1 class="text-3xl font-semibold font-cinema text-center text-white mb-6">Planetary Allies</h1>
+        
+        <div class="mb-8 text-zinc-200 space-y-3">
+            <p class="text-sm leading-relaxed">
+                Discover your celestial guardians. Based on your date of birth, 
+                this system maps your ruling planet and reveals planetary allies 
+                that influence your energy, personality, and life path.
+            </p>
+            <p class="text-sm leading-relaxed">
+                Optionally include your birth time and place for a deeper astro-numerological blend — 
+                revealing house placements and localized planetary strengths.
+            </p>
+            <p class="text-xs italic text-pink-200">
+                Note: Only DOB is required. Time and place are optional for advanced insights.
+            </p>
+        </div>
+
+        <form class="space-y-5">
+            <div>
+                <label for="dob" class="block text-sm font-medium text-zinc-200 mb-1">Date of Birth <span class="text-pink-200">(Required)</span></label>
+                <input 
+                    type="date" 
+                    id="dob" 
+                    name="dob" 
+                    required
+                    class="w-full text-black px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#ff92fb] focus:border-transparent"
+                >
+            </div>
+            
+            <div>
+                <label for="time" class="block text-sm font-medium text-zinc-200 mb-1">Time of Birth <span class="text-pink-200">(Optional)</span></label>
+                <input 
+                    type="time" 
+                    id="time" 
+                    name="time"
+                    class="w-full text-black px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#ff92fb] focus:border-transparent"
+                    placeholder="e.g. 08:30"
+                >
+            </div>
+            
+            <div>
+                <label for="place" class="block text-sm font-medium text-zinc-200 mb-1">Place of Birth <span class="text-pink-200">(Optional)</span></label>
+                <input 
+                    type="text" 
+                    id="place" 
+                    name="place"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#ff92fb] focus:border-transparent"
+                    placeholder="e.g. New York, USA"
+                >
+            </div>
+            
+            <button 
+                type="submit" 
+                class="w-full bg-[#38003b] hover:bg-[#4e114a] text-white font-medium py-2 px-4 rounded-md transition duration-200"
+            >
+                Discover My Planetary Allies
+            </button>
+        </form>
+    </div>
+</body>
+</html>

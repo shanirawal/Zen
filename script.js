@@ -78,3 +78,32 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+
+ // Create floating particles
+    const particles = document.getElementById('particles');
+    const numParticles = 30;
+
+    for (let i = 0; i < numParticles; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+
+      // Random size
+      const size = Math.random() * 4 + 1;
+      particle.style.width = `${size}px`;
+      particle.style.height = `${size}px`;
+
+      // Random position
+      particle.style.left = `${Math.random() * 100}%`;
+      particle.style.top = `${Math.random() * 100}%`;
+
+      // Random animation delay
+      particle.style.animationDelay = `${Math.random() * 10}s`;
+
+      // Random animation duration
+      particle.style.animationDuration = `${Math.random() * 15 + 10}s`;
+
+      particles.appendChild(particle);
+    }
+
+
+    
