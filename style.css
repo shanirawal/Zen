@@ -12,6 +12,10 @@ html, body {
     
 }
 
+input {
+  color: #1a0b19 !important;
+}
+
 @font-face {
   font-family: 'CinemaSunday';
   src: url('./fonts/cinemasundaydemofont-Regular.woff2') format('woff2'),

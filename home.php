@@ -48,6 +48,12 @@
                 class="text-zinc-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors duration-200"
                 >About</a
               >
+
+              <a
+                href="contacts.php"
+                class="text-zinc-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors duration-200"
+                >Contacts</a
+              >
             </div>
 
             <!-- User section -->
@@ -77,20 +83,11 @@
                     >Settings</a
                   >
                   <a
-                    href="#"
+                    href="logout.php?action=run"
                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     >Sign out</a
                   >
                 </div>
-              </div>
-
-              <!-- Login/Logout buttons -->
-              <div class="hidden md:flex items-center ml-4 space-x-2" >
-                <button
-                  class="bg-[#d60000] hover:bg-[#940101] text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200" onclick="window.location.href='logout.php?action=run'"
-                >
-                  Logout
-                </button>
               </div>
 
               <!-- Mobile menu button -->

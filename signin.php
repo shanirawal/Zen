@@ -16,6 +16,7 @@
             {
                 echo "Password verified.<br>Welcome " . $user['username'] . " to Zenstar <br>";
                 session_start();
+                $_SESSION["userId"] = $user["id"];
                 $_SESSION["username"] = $user["username"];
                 $_SESSION["email"] = $user["email"];
                 header('Location: home.php');

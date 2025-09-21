@@ -1,3 +1,9 @@
+<?php
+  session_start();
+  if (!empty($_SESSION['id']) && !empty($_SESSION['email'])){
+    header('Location: home.php');
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
