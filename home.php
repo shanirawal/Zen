@@ -48,8 +48,7 @@
                 class="text-zinc-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors duration-200"
                 >About</a
               >
-
-              <a
+s              <a
                 href="contacts.php"
                 class="text-zinc-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors duration-200"
                 >Contacts</a
@@ -129,11 +128,15 @@
                 class="block px-3 py-2 rounded-md text-base font-medium text-zinc-300 hover:text-white hover:bg-[#7b006981]"
                 >Features</a
               >
-
               <a
                 href="#"
                 class="block px-3 py-2 rounded-md text-base font-medium text-zinc-300 hover:text-white hover:bg-[#7b006981]"
                 >About Us</a
+              >
+              <a
+                href="#"
+                class="block px-3 py-2 rounded-md text-base font-medium text-zinc-300 hover:text-white hover:bg-[#7b006981]"
+                >Contacts</a
               >
               <div class="border-t flex w-full border-gray-200 pt-4">
                 <a

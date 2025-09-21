@@ -34,7 +34,17 @@
                     placeholder="e.g. Rahul Sharma"
                 >
             </div>
-            
+            <div>
+                <label for="date" class="block text-sm font-medium text-zinc-200 mb-1">Date</label>
+                <input 
+                    type="date" 
+                    id="date" 
+                    name="date" 
+                    required
+                    
+                    class="w-full text-black px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#ff92fb]focus:border-transparent"
+                >
+            </div>
             <button 
                 type="submit" 
                 class="w-full bg-[#38003b] hover:bg-[#4e114a] text-white font-medium py-2 px-4 rounded-md transition duration-200"
