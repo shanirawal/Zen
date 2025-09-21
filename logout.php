@@ -5,9 +5,6 @@ if (isset($_GET['action']) && $_GET['action'] === 'run') {
     session_unset();
     session_destroy();
     header("Location: index.php");
-} 
-else 
-{
+} else {
     echo "No action specified.";
 }
-?>

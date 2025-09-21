@@ -1,6 +1,6 @@
 <?php
-ini_set('display_errors', 'TRUE');
-require('Config/connection.php');
+require_once('Config/sessions.php');
+require_once('Models/Contact.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,15 +14,12 @@ require('Config/connection.php');
 <body>
 
     <?php
-    $conn = connectToDB();
-    $sql = "SELECT * FROM contacts where user_id=" . ($_SESSION['userId'] ?? -1);
-    $result = mysqli_query($conn, $sql);
-    $contacts = mysqli_fetch_all($result, MYSQLI_ASSOC);
-    closeConnection($conn);
+    $contacts = Contact::getAll($sessionUserId);
     ?>
 
     <table border="1" cellpadding="5" cellspacing="0">
         <tr>
+            <th>Contact Id</th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Birth Date</th>
@@ -32,6 +29,7 @@ require('Config/connection.php');
         </tr>
         <?php foreach ($contacts as $contact) { ?>
             <tr>
+                <td><?= $contact['id'] ?></td>
                 <td><?= $contact['firstName'] ?></td>
                 <td><?= $contact['lastName'] ?></td>
                 <td><?= $contact['birthDate'] ?></td>

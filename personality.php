@@ -1,5 +1,11 @@
+<?php
+require_once('Config/sessions.php');
+require_once('Models/Contact.php');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,54 +13,73 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body class=" min-h-screen flex items-center justify-center p-4">
     <div class="bg-[#70507E] rounded-lg shadow-md p-8 max-w-md w-full">
         <h1 class="text-3xl font-semibold font-cinema text-center text-white mb-6">Personality Traits </h1>
-        
+
         <div class="mb-8 text-zinc-200 space-y-3">
             <p class="text-sm leading-relaxed">
-                Discover insights about your personality through our simple assessment. 
-                This test helps identify key personality traits that shape how you think, 
+                Discover insights about your personality through our simple assessment.
+                This test helps identify key personality traits that shape how you think,
                 feel, and behave in different situations.
             </p>
             <p class="text-sm leading-relaxed">
-                Your responses will remain confidential and are used solely to generate 
+                Your responses will remain confidential and are used solely to generate
                 personalized feedback about your unique personality profile.
             </p>
         </div>
 
         <form name="personalityForm" class="space-y-5" action="personality_traits.php" method="POST">
+
+        <?php 
+            $contacts = Contact::getAll($sessionUserId);
+        ?>
+
+            <div>
+                <label for="name" class="block text-sm font-medium text-zinc-200 mb-1">Contact</label>
+                <select
+                    id="contact"
+                    name="contact"
+                    required
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#ff92fb] focus:border-transparent">
+                    <?php foreach ($contacts as $key => $contact) { ?>
+                        <option value="<?= $contact['id']; ?>">
+                            <?= ($contact['firstName'] . $contact['lastName']); ?>
+                        </option>
+                    <?php } ?>
+                </select>
+            </div>
+
             <div>
                 <label for="name" class="block text-sm font-medium text-zinc-200 mb-1">Full Name</label>
-                <input 
-                    type="text" 
-                    id="name" 
-                    name="name" 
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
                     required
                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#ff92fb] focus:border-transparent"
-                    placeholder="Enter your full name"
-                >
+                    placeholder="Enter your full name">
             </div>
-            
+
             <div>
                 <label for="date" class="block text-sm font-medium text-zinc-200 mb-1">Date</label>
-                <input 
-                    type="date" 
-                    id="date" 
-                    name="date" 
+                <input
+                    type="date"
+                    id="date"
+                    name="date"
                     required
-                    
-                    class="w-full text-black px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#ff92fb]focus:border-transparent"
-                >
+
+                    class="w-full text-black px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#ff92fb]focus:border-transparent">
             </div>
-            
-            <button 
-                type="submit" 
-                class="w-full bg-[#38003b] hover:bg-[#4e114a] text-white font-medium py-2 px-4 rounded-md transition duration-200"
-            >
+
+            <button
+                type="submit"
+                class="w-full bg-[#38003b] hover:bg-[#4e114a] text-white font-medium py-2 px-4 rounded-md transition duration-200">
                 Begin Test
             </button>
         </form>
     </div>
 </body>
+
 </html>
