@@ -17,15 +17,12 @@
                 It reveals hidden energies and life patterns tied to your destiny.
             </p>
             <p class="text-sm leading-relaxed">
-                Enter your full legal name (First + Middle + Last) exactly as it appears on your birth certificate 
+                Enter your full legal name (First + Last) exactly as it appears on your birth certificate 
                 to calculate your core Chaldean Number.
-            </p>
-            <p class="text-xs italic text-pink-200">
-                Note: Middle name is required. Use full name for accurate results.
             </p>
         </div>
 
-        <form class="space-y-5">
+        <form class="space-y-5" action="chadlean_traits.php" method="POST">
             <div>
                 <label for="fullName" class="block text-sm font-medium text-zinc-200 mb-1">Full Name (First + Middle + Last)</label>
                 <input 
@@ -33,8 +30,8 @@
                     id="fullName" 
                     name="fullName" 
                     required
-                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#ff92fb] focus:border-transparent"
-                    placeholder="e.g. John Michael Smith"
+                   class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#ff92fb] focus:border-transparent"
+                    placeholder="e.g. Rahul Sharma"
                 >
             </div>
             

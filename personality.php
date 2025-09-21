@@ -23,7 +23,7 @@
             </p>
         </div>
 
-        <form class="space-y-5">
+        <form name="personalityForm" class="space-y-5" action="personality_traits.php" method="POST">
             <div>
                 <label for="name" class="block text-sm font-medium text-zinc-200 mb-1">Full Name</label>
                 <input 

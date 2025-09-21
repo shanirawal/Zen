@@ -85,9 +85,9 @@
               </div>
 
               <!-- Login/Logout buttons -->
-              <div class="hidden md:flex items-center ml-4 space-x-2">
+              <div class="hidden md:flex items-center ml-4 space-x-2" >
                 <button
-                  class="bg-[#d60000] hover:bg-[#940101] text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                  class="bg-[#d60000] hover:bg-[#940101] text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200" onclick="window.location.href='logout.php?action=run'"
                 >
                   Logout
                 </button>
@@ -136,7 +136,7 @@
               <a
                 href="#"
                 class="block px-3 py-2 rounded-md text-base font-medium text-zinc-300 hover:text-white hover:bg-[#7b006981]"
-                >About</a
+                >About Us</a
               >
               <div class="border-t flex w-full border-gray-200 pt-4">
                 <a
@@ -187,7 +187,7 @@
                 Discover the unique personality traits hidden in your numbers.
               </p>
               <div class="flex items-center justify-center">
-                <button  onclick="window.location.href='personality.html'"
+                <button  onclick="window.location.href='personality.php'"
                   id="card1-explore-btn"
                   class="bg-primary hover:bg-[#814882] text-white font-medium py-2 px-4 rounded-md transition-colors duration-200"
                 >
@@ -214,7 +214,7 @@
                 Reveal the hidden vibrations of your name and unlock ancient number wisdom.
               </p>
               <div class="flex items-center justify-center">
-                <button onclick="window.location.href='chadlean.html'"
+                <button onclick="window.location.href='chadlean.php'"
                   class="bg-primary hover:bg-[#814882] text-white font-medium py-2 px-4 rounded-md transition-colors duration-200"
                 >
                   Explore Now
@@ -240,7 +240,7 @@
                 Discover which planets empower your journey and which ones test your path.
               </p>
               <div class="flex items-center justify-center">
-                <button onclick="window.location.href='planet.html'"
+                <button onclick="window.location.href='planet.php'"
                   class="bg-primary hover:bg-[#814882] text-white font-medium py-2 px-4 rounded-md transition-colors duration-200"
                 >
                   Explore Now

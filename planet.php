@@ -26,7 +26,7 @@
             </p>
         </div>
 
-        <form class="space-y-5">
+        <form class="space-y-5" action="planet_traits.php" method="POST">
             <div>
                 <label for="dob" class="block text-sm font-medium text-zinc-200 mb-1">Date of Birth <span class="text-pink-200">(Required)</span></label>
                 <input 
@@ -70,3 +70,7 @@
     </div>
 </body>
 </html>
+
+
+
+class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#ff92fb] focus:border-transparent" 
