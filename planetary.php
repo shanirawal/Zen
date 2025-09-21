@@ -15,21 +15,21 @@ require_once('Models/Contact.php');
 
 <body class="min-h-screen flex items-center justify-center p-4">
     <div class="bg-[#70507E] rounded-lg shadow-md p-8 max-w-md w-full">
-        <h1 class="text-3xl font-semibold font-cinema text-center text-white mb-6">Personality Traits</h1>
+        <h1 class="text-3xl font-semibold font-cinema text-center text-white mb-6">Planetary Allies</h1>
 
         <div class="mb-8 text-zinc-200 space-y-3">
             <p class="text-sm leading-relaxed">
-                Discover insights about your personality through our simple assessment.
-                This test helps identify key personality traits that shape how you think,
-                feel, and behave in different situations.
+                Discover your celestial guardians. Based on your date of birth,
+                this system maps your ruling planet and reveals planetary allies
+                that influence your energy, personality, and life path.
             </p>
             <p class="text-sm leading-relaxed">
-                Your responses will remain confidential and are used solely to generate
-                personalized feedback about your unique personality profile.
+                Optionally include your birth time and place for a deeper astro-numerological blend —
+                revealing house placements and localized planetary strengths.
             </p>
         </div>
 
-        <form id="personalityForm" name="personalityForm" class="space-y-5">
+        <form id="personalDetailsForm" name="personalDetailsForm" class="space-y-5">
             <?php
             $contacts = Contact::getAll($sessionUserId);
             ?>
@@ -82,7 +82,7 @@ require_once('Models/Contact.php');
         <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg max-w-lg w-full">
             <!-- Modal header -->
             <div class="flex items-start justify-between p-4 border-b dark:border-gray-600">
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Personality Trait</h3>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Planetary Trait</h3>
                 <button id="closeModalBtn" class="text-gray-400 hover:text-gray-900 dark:hover:text-white text-lg font-bold">&times;</button>
             </div>
 
@@ -155,41 +155,60 @@ require_once('Models/Contact.php');
         }
 
         function getCharacterDetails(day) {
-            const characterTraits = {
-                1: "Enthusiastic, natural leader, confident, independent, enjoys taking initiative.",
-                2: "Intuitive, empathetic, cooperative, sensitive to others' feelings, values harmony.",
-                3: "Creative, expressive, sociable, fun-loving, enjoys sharing ideas and connecting with people.",
-                4: "Disciplined, responsible, hardworking, organized, values stability and structure.",
-                5: "Adventurous, freedom-loving, curious, dynamic, loves exploring new opportunities.",
-                6: "Caring, nurturing, compassionate, family-oriented, strives to help others.",
-                7: "Analytical, introspective, thoughtful, enjoys research and deep thinking, values privacy.",
-                8: "Ambitious, practical, goal-oriented, strong-willed, motivated to achieve success.",
-                9: "Idealistic, imaginative, broad-minded, creative thinker, focuses on personal growth.",
-                10: "Confident, decisive, strategic, good at leadership and managing responsibilities.",
-                11: "Visionary, independent, innovative, likes to take risks, forward-thinking.",
-                12: "Friendly, sociable, communicative, expressive, values friendships and social connections.",
-                13: "Practical, reliable, methodical, disciplined, prefers stability and consistency.",
-                14: "Energetic, adventurous, versatile, enjoys travel and new experiences, optimistic.",
-                15: "Compassionate, supportive, empathetic, family and community-focused, peace-loving.",
-                16: "Creative, artistic, sensitive, introspective, enjoys reflection and thoughtful pursuits.",
-                17: "Ambitious, confident, goal-driven, enjoys leadership roles and recognition.",
-                18: "Generous, kind, idealistic, values helping others and contributing to society.",
-                19: "Confident, strategic, problem-solving, enjoys challenges, visionary thinker.",
-                20: "Diplomatic, intuitive, relationship-focused, avoids conflicts, seeks harmony.",
-                21: "Dynamic, enthusiastic, adventurous, strong-willed, enjoys excitement and variety.",
-                22: "Organized, disciplined, responsible, long-term planner, values security and order.",
-                23: "Creative, sociable, communicative, charming, enjoys expressing ideas and networking.",
-                24: "Caring, empathetic, nurturing, family-oriented, strives to create harmony.",
-                25: "Independent, ambitious, goal-oriented, confident in making decisions, pragmatic.",
-                26: "Analytical, detail-oriented, introspective, enjoys problem-solving and learning.",
-                27: "Charismatic, creative, social, expressive, naturally attracts attention and followers.",
-                28: "Responsible, hardworking, reliable, disciplined, values stability and long-term planning.",
-                29: "Sensitive, spiritual, intuitive, reflective, seeks personal growth and understanding.",
-                30: "Optimistic, energetic, outgoing, adventurous, enjoys new challenges and experiences.",
-                31: "Independent, creative, confident, adventurous, enjoys freedom and taking initiative.",
-            };
+            let characterTrait = "No information";
+            switch (day) {
+                case 1:
+                case 10:
+                case 19:
+                case 28:
+                    characterTrait = "Your ruling planet is SUN. Medical related, Metals related!";
+                    break;
+                case 2:
+                case 11:
+                case 20:
+                case 29:
+                    characterTrait = "Your ruling planet is MOON. Silver related, emotional related!";
+                    break;
+                case 3:
+                case 12:
+                case 21:
+                case 30:
+                    characterTrait = "Your ruling planet is JUPITER. Higher education";
+                    break;
+                case 4:
+                case 13:
+                case 22:
+                case 31:
+                    characterTrait = "Your ruling planet is RAHU. All types of business, All in one!";
+                    break;
+                case 5:
+                case 14:
+                case 23:
+                    characterTrait = "Your ruling planet is MERCURY. Education -> primary, secondary!";
+                    break;
+                case 6:
+                case 15:
+                case 24:
+                    characterTrait = "Your ruling planet is VENUS. Designing related, luxury business!";
+                    break;
+                case 7:
+                case 16:
+                case 25:
+                    characterTrait = "Your ruling planet is KETU. Ocult science related work!";
+                    break;
+                case 8:
+                case 17:
+                case 26:
+                    characterTrait = "Your ruling planet is SATURN. Iron related work!";
+                    break;
+                case 9:
+                case 18:
+                case 27:
+                    characterTrait = "Your ruling planet is MARS. Fighting, Police, Army";
+                    break;
+            }
 
-            return characterTraits[day] ?? "No information";
+            return characterTrait;
         }
     </script>
 </body>
