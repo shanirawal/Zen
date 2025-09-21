@@ -13,7 +13,23 @@ require_once('Models/Contact.php');
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="min-h-screen flex items-center justify-center p-4">
+<body class="min-h-screen flex flex-col items-center justify-center ">
+
+<nav class=" w-full  px-10 mb-5 flex items-center justify-between ">
+        <div class="flex items-center">
+            <img 
+                src="./assets/zenstar2.png" 
+                alt="Logo" 
+                class="h-12 w-12 rounded-lg object-cover border-2 border-white/20"
+            />
+        </div>
+        <button
+            onclick="window.location.href='home.php'"
+            class="bg-[#38003b] hover:bg-[#4e114a] text-white font-medium py-2 px-5 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
+            Back to Home
+        </button>
+    </nav>
+    
     <div class="bg-[#70507E] rounded-lg shadow-md p-8 max-w-md w-full">
         <h1 class="text-3xl font-semibold font-cinema text-center text-white mb-6">Planetary Allies</h1>
 
@@ -79,31 +95,32 @@ require_once('Models/Contact.php');
 
     <!-- Main Modal -->
     <div id="default-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg max-w-lg w-full">
-            <!-- Modal header -->
-            <div class="flex items-start justify-between p-4 border-b dark:border-gray-600">
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Planetary Trait</h3>
-                <button id="closeModalBtn" class="text-gray-400 hover:text-gray-900 dark:hover:text-white text-lg font-bold">&times;</button>
-            </div>
+    <div class="bg-white dark:bg-[#2f1a2f] rounded-lg shadow-lg max-w-lg w-full">
+        <!-- Modal header -->
+        <div class="flex items-start justify-between p-4 border-b dark:border-gray-600">
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Planetary Trait</h3>
+            <button id="closeModalBtn" class="text-gray-400 hover:text-gray-900 dark:hover:text-white text-lg font-bold">&times;</button>
+        </div>
 
-            <!-- Modal body -->
-            <div class="p-6 space-y-4 text-gray-700 dark:text-gray-300">
-                <p id="characterDetails">
-                    Please read and accept the terms before starting the personality test.
-                </p>
-            </div>
+        <!-- Modal body -->
+        <div class="p-6 space-y-4 text-gray-700 dark:text-gray-300">
+            <p id="characterDetails">
+                Please read and accept the terms before starting the personality test.
+            </p>
+        </div>
 
-            <!-- Modal footer -->
-            <div class="flex items-center p-4 border-t border-gray-200 dark:border-gray-600">
-                <button id="acceptBtn" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                    Okay
-                </button>
-                <button id="declineBtn" class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
-                    Close
-                </button>
-            </div>
+        <!-- Modal footer -->
+        <div class="flex items-center p-4 border-t border-gray-200 dark:border-gray-600">
+            <button id="acceptBtn" class="text-white bg-[#6b3a6b] hover:bg-[#854285] focus:ring-4 focus:outline-none focus:ring-purple-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                Okay
+            </button>
+            <button id="declineBtn" class="py-2.5 px-5 ms-3 text-sm font-medium text-purple-100 bg-[#2f1f2f] rounded-lg border border-purple-700 hover:bg-[#3a2a3a] hover:text-white focus:ring-4 focus:outline-none focus:ring-purple-400">
+                Close
+            </button>
         </div>
     </div>
+</div>
+
 
     <!-- JavaScript -->
     <script>
