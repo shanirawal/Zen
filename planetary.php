@@ -15,21 +15,17 @@ require_once('Models/Contact.php');
 
 <body class="min-h-screen flex flex-col items-center justify-center ">
 
-<nav class=" w-full  px-10 mb-5 flex items-center justify-between ">
+    <nav class=" w-full  px-10 mb-5 flex items-center justify-between ">
         <div class="flex items-center">
-            <img 
-                src="./assets/zenstar2.png" 
-                alt="Logo" 
-                class="h-12 w-12 rounded-lg object-cover border-2 border-white/20"
-            />
+            <img src="./assets/zenstar2.png" alt="Logo"
+                class="h-12 w-12 rounded-lg object-cover border-2 border-white/20" />
         </div>
-        <button
-            onclick="window.location.href='home.php'"
+        <button onclick="window.location.href='home.php'"
             class="bg-[#38003b] hover:bg-[#4e114a] text-white font-medium py-2 px-5 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
             Back to Home
         </button>
     </nav>
-    
+
     <div class="bg-[#70507E] rounded-lg shadow-md p-8 max-w-md w-full">
         <h1 class="text-3xl font-semibold font-cinema text-center text-white mb-6">Planetary Allies</h1>
 
@@ -55,7 +51,8 @@ require_once('Models/Contact.php');
                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#ff92fb] focus:border-transparent">
                     <option value="">Select Contact</option>
                     <?php foreach ($contacts as $key => $contact) { ?>
-                        <option value="<?= $contact['id']; ?>" data-birthdate="<?= $contact['birthDate']; ?>" data-fullName="<?= $contact['fullName']; ?>">
+                        <option value="<?= $contact['id']; ?>" data-birthdate="<?= $contact['birthDate']; ?>"
+                            data-fullName="<?= $contact['fullName']; ?>">
                             <?= $contact['fullName']; ?>
                         </option>
                     <?php } ?>
@@ -64,29 +61,19 @@ require_once('Models/Contact.php');
 
             <div>
                 <label for="fullName" class="block text-sm font-medium text-zinc-200 mb-1">Full Name</label>
-                <input
-                    type="text"
-                    id="fullName"
-                    name="fullName"
-                    required
+                <input type="text" id="fullName" name="fullName" required
                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#ff92fb] focus:border-transparent"
                     placeholder="Enter your full name">
             </div>
 
             <div>
                 <label for="birthDate" class="block text-sm font-medium text-zinc-200 mb-1">Birth Date</label>
-                <input
-                    type="date"
-                    id="birthDate"
-                    name="birthDate"
-                    required
+                <input type="date" id="birthDate" name="birthDate" required
                     class="w-full text-black px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#ff92fb] focus:border-transparent">
             </div>
 
             <!-- Begin Test Button (opens modal instead of submitting) -->
-            <button
-                type="button"
-                id="beginTestBtn"
+            <button type="button" id="beginTestBtn"
                 class="w-full bg-[#38003b] hover:bg-[#4e114a] text-white font-medium py-2 px-4 rounded-md transition duration-200">
                 Begin Test
             </button>
@@ -94,32 +81,137 @@ require_once('Models/Contact.php');
     </div>
 
     <!-- Main Modal -->
-    <div id="default-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-    <div class="bg-white dark:bg-[#2f1a2f] rounded-lg shadow-lg max-w-lg w-full">
-        <!-- Modal header -->
-        <div class="flex items-start justify-between p-4 border-b dark:border-gray-600">
-            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Planetary Trait</h3>
-            <button id="closeModalBtn" class="text-gray-400 hover:text-gray-900 dark:hover:text-white text-lg font-bold">&times;</button>
+    <div id="default-modal" class="hidden fixed inset-0 bg-[#1a0c1f] flex items-center justify-center z-50 p-0">
+        <!-- Animated Background Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-br from-[#6b46c1]/5 via-transparent to-[#553c9a]/5 animate-pulse">
         </div>
 
-        <!-- Modal body -->
-        <div class="p-6 space-y-4 text-gray-700 dark:text-gray-300">
-            <p id="characterDetails">
-                Please read and accept the terms before starting the personality test.
-            </p>
+        <!-- Floating Cosmic Orbs -->
+        <div class="absolute top-20 left-10 w-32 h-32 bg-[#6b46c1]/10 rounded-full blur-3xl animate-bounce"
+            style="animation-duration: 8s; animation-delay: 0s;"></div>
+        <div class="absolute bottom-20 right-10 w-40 h-40 bg-[#553c9a]/10 rounded-full blur-3xl animate-bounce"
+            style="animation-duration: 10s; animation-delay: 2s;"></div>
+        <div class="absolute top-1/2 right-1/4 w-24 h-24 bg-purple-400/5 rounded-full blur-2xl animate-pulse"
+            style="animation-duration: 6s;"></div>
+
+        <!-- Main Modal as Full Page -->
+        <div class="relative w-full max-w-6xl mx-8 my-8">
+            <div
+                class="bg-[rgba(34,19,51,0.75)] backdrop-blur-2xl border border-[rgba(107,70,193,0.4)] rounded-3xl shadow-3xl overflow-hidden transform transition-all duration-500">
+
+                <!-- Decorative Top Wave -->
+                <div class="h-2 bg-gradient-to-r from-[#6b46c1] via-[#553c9a] to-[#6b46c1]"></div>
+
+                <!-- Header Section -->
+                <div class="p-10 pb-6 border-b border-[#553c9a]/30 bg-[rgba(34,19,51,0.6)]">
+                    <div class="flex items-start justify-between">
+                        <div class="flex items-center space-x-4">
+                            <div
+                                class="w-4 h-4 bg-gradient-to-r from-[#6b46c1] to-[#553c9a] rounded-full animate-pulse">
+                            </div>
+                            <h1
+                                class="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-purple-200 leading-tight">
+                                Planetary Trait
+                            </h1>
+                        </div>
+                        <button id="closeModalBtn"
+                            class="text-gray-400 hover:text-white text-4xl md:text-5xl font-light transition-all duration-300 hover:rotate-180 hover:scale-110"
+                            aria-label="Close modal">
+                            &times;
+                        </button>
+                    </div>
+                    <div class="mt-4 w-24 h-1 bg-gradient-to-r from-[#6b46c1] to-transparent rounded-full"></div>
+                </div>
+
+                <!-- Body Section -->
+                <div class="px-10 py-12 bg-[rgba(26,12,31,0.4)] min-h-96 flex items-center">
+                    <div class="max-w-4xl mx-auto text-center">
+                        <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-[#6b46c1] to-[#553c9a] rounded-full mb-8 animate-spin"
+                            style="animation-duration: 8s; animation-timing-function: linear;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                        </div>
+                        <p id="characterDetails"
+                            class="text-xl md:text-2xl text-gray-200 leading-relaxed max-w-3xl mx-auto px-4">
+                            Please read and accept the terms before starting the personality test.
+                        </p>
+                        <div
+                            class="mt-12 w-3/4 mx-auto h-px bg-gradient-to-r from-transparent via-[#553c9a]/40 to-transparent">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer Section -->
+                <div class="px-10 py-8 bg-[rgba(34,19,51,0.6)] border-t border-[#553c9a]/30">
+                    <div
+                        class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-6 max-w-3xl mx-auto">
+                        <button id="declineBtn"
+                            class="py-4 px-8 text-lg font-medium text-purple-200 bg-[#2f1f2f] rounded-2xl border-2 border-purple-700 hover:bg-[#3a2a3a] hover:text-white hover:shadow-2xl hover:-translate-y-1 focus:ring-4 focus:outline-none focus:ring-purple-400/50 transition-all duration-300 flex items-center justify-center space-x-3 min-w-48">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                            <span>Okay</span>
+                        </button>
+
+
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <!-- Modal footer -->
-        <div class="flex items-center p-4 border-t border-gray-200 dark:border-gray-600">
-            <button id="acceptBtn" class="text-white bg-[#6b3a6b] hover:bg-[#854285] focus:ring-4 focus:outline-none focus:ring-purple-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                Okay
-            </button>
-            <button id="declineBtn" class="py-2.5 px-5 ms-3 text-sm font-medium text-purple-100 bg-[#2f1f2f] rounded-lg border border-purple-700 hover:bg-[#3a2a3a] hover:text-white focus:ring-4 focus:outline-none focus:ring-purple-400">
-                Close
-            </button>
-        </div>
+        <style>
+            @keyframes pulse {
+
+                0%,
+                100% {
+                    opacity: 0.3;
+                }
+
+                50% {
+                    opacity: 0.6;
+                }
+            }
+
+            .animate-pulse {
+                animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            }
+
+            @keyframes bounce {
+
+                0%,
+                100% {
+                    transform: translateY(0);
+                }
+
+                50% {
+                    transform: translateY(-20px);
+                }
+            }
+
+            .animate-bounce {
+                animation: bounce 4s ease-in-out infinite;
+            }
+
+            @keyframes spin {
+                0% {
+                    transform: rotate(0deg);
+                }
+
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+
+            .animate-spin {
+                animation: spin 8s linear infinite;
+            }
+        </style>
     </div>
-</div>
 
 
     <!-- JavaScript -->
