@@ -24,9 +24,8 @@
 
           <!-- Desktop navigation -->
           <div class="hidden md:flex md:items-center md:space-x-8">
-            <a href="#"
-              class="text-zinc-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors duration-200">Home</a>
-            <a href="#"
+            
+            <a onclick="window.location.href='features.html'" 
               class="text-zinc-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors duration-200">Features</a>
 
 
@@ -48,7 +47,7 @@
                 class="hidden absolute right-0 mt-40 w-48 bg-white rounded-md shadow-lg py-1 ring-1 ring-black ring-opacity-5 focus:outline-none"
                 id="dropdown-menu">
                 <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Your Profile</a>
-                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</a>
+                
                 <a href="logout.php?action=run" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign
                   out</a>
               </div>
@@ -71,14 +70,11 @@
         <!-- Mobile menu -->
         <div class="md:hidden hidden" id="mobile-menu">
           <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="#"
-              class="block px-3 py-2 rounded-md text-base font-medium text-zinc-300 hover:text-white hover:bg-[#7b006981]">Home</a>
-            <a href="#"
+            
+            <a onclick="window.location.href='features.html'"
               class="block px-3 py-2 rounded-md text-base font-medium text-zinc-300 hover:text-white hover:bg-[#7b006981]">Features</a>
-            <a href="#"
-              class="block px-3 py-2 rounded-md text-base font-medium text-zinc-300 hover:text-white hover:bg-[#7b006981]">About
-              Us</a>
-            <a href="#"
+            
+            <a onclick="window.location.href='contacts.php'"
               class="block px-3 py-2 rounded-md text-base font-medium text-zinc-300 hover:text-white hover:bg-[#7b006981]">Contacts</a>
             <div class="border-t flex w-full border-gray-200 pt-4">
               <a href="#"
@@ -90,10 +86,13 @@
     </nav>
 
     <div class="w-full flex flex-col items-center justify-center relative min-h-screen bg-cover bg-center"
-      style="background-image: url('./assets/starrybgHome.png')">
+      style="background-image: url('./assets/homebg.png'); background-color: #1a0a1f;">
 
-      <div class="flex flex-col items-center w-[60%] text-center">
-        <h1 class="relative text-4xl md:text-6xl text-[#d7b0e7] font-bold -mt-[10rem]  z-10 font-cinema">
+      <div class="absolute inset-0 z-0"
+        style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 60%, #1a0a1f 100%);"></div>
+
+      <div class="flex flex-col z-10 items-center w-[60%] text-center">
+        <h1 class="relative text-4xl md:text-6xl text-[#d7b0e7] font-bold -mt-[10rem] z-10 font-cinema">
           Numerology Insights
         </h1>
         <h2 class="text-2xl mt-1 font-cinema ">Your personality decoded in numbers</h2>
@@ -104,110 +103,71 @@
 
     </div>
 
-    <div class="w-full h-full mb-[10rem] flex flex-col items-center justify-center">
-      <!-- cards -->
-      <div
-        class="w-full mt-[3rem] gap-x-2 gap-y-10 px-[3rem] place-items-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        <!-- card 1 -->
-        <div
-          class="bg-[#f6cbf6] hover:scale-105 rounded-lg shadow-lg overflow-hidden max-w-[300px] transition-all duration-300 hover:shadow-xl">
-          <img src="./assets/personalityTraits.png" alt="Card image"
-            class="w-full h-48 rounded-b-lg object-cover object-top" />
-          <div class="p-6">
-            <h2 class="text-xl font-bold text-gray-800 mb-2">
-              Unlocking Your True Self Through Numerology
-            </h2>
-            <p class="text-gray-600 mb-4">
-              Discover the unique personality traits hidden in your numbers.
-            </p>
-            <div class="flex items-center justify-center">
-              <button onclick="window.location.href='personality.php'" id="card1-explore-btn"
-                class="bg-primary hover:bg-[#814882] text-white font-medium py-2 px-4 rounded-md transition-colors duration-200">
-                Explore Now
-              </button>
-            </div>
-          </div>
-        </div>
+    
 
-        <!-- card 2 -->
-        <div
-          class="bg-[#f6cbf6] hover:scale-105 rounded-lg shadow-lg overflow-hidden max-w-[300px] transition-all duration-300 hover:shadow-xl">
-          <img src="./assets/Chadean.png" alt="Card image" class="w-full h-48 rounded-b-lg object-cover object-top" />
-          <div class="p-6">
-            <h2 class="text-xl font-bold text-gray-800 mb-2">
-              Chaldean Numerology
-            </h2>
-            <p class="text-gray-600 mb-4">
-              Reveal the hidden vibrations of your name and unlock ancient number wisdom.
-            </p>
-            <div class="flex items-center justify-center">
-              <button onclick="window.location.href='chaldean.php'"
-                class="bg-primary hover:bg-[#814882] text-white font-medium py-2 px-4 rounded-md transition-colors duration-200">
-                Explore Now
-              </button>
-            </div>
-          </div>
-        </div>
+    <div class="w-full space-y-3   mb-[10rem] flex flex-col items-center justify-center bg-cover  bg-center " style="background-image: url('./assets/starrybgHome.png');">
 
-        <!-- card 3 -->
-        <div
-          class="bg-[#f6cbf6] hover:scale-105 rounded-lg shadow-lg overflow-hidden max-w-[300px] transition-all duration-300 hover:shadow-xl">
-          <img src="./assets/planetaryTraits.png" alt="Card image"
-            class="w-full h-48 rounded-b-lg  object-cover object-top" />
-          <div class="p-6">
-            <h2 class="text-xl font-bold text-gray-800 mb-2">
-              Planetary Allies
-            </h2>
-            <p class="text-gray-600 mb-4">
-              Discover which planets empower your journey and which ones test your path.
-            </p>
-            <div class="flex items-center justify-center">
-              <button onclick="window.location.href='planetary.php'"
-                class="bg-primary hover:bg-[#814882] text-white font-medium py-2 px-4 rounded-md transition-colors duration-200">
-                Explore Now
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="w-full space-y-3   mb-[10rem] flex flex-col items-center justify-center">
-
-       
 
 
       <!-- personality traits section -->
       <div class="min-w-[70%]  flex relative  rounded-xl max-w-[80%]  ">
-          <img src="./assets/pt-nobg.png" alt=""
-          class="h-80 rounded-xl "
-          >
 
-          <div class="flex flex-col justify-center ">
-            <h2 class="text-4xl text-center font-cinema text-[#ca92e2] font-bold mb-4">Discover Your Personality Traits</h2>
-            <p class="text-lg text-center text-gray-200 mb-6">
-              Unveil the unique characteristics that define you. Our personality traits analysis provides insights into your strengths, weaknesses, and behavioral patterns based on your numerology profile.
-            </p>
-            
-          </div>
+
+        <img src="./assets/planets-nobg.png" alt="" class="h-80 rounded-xl ">
+
+        <div class="flex flex-col justify-center relative">
+
+          <h2 class="text-4xl text-center font-cinema text-white font-bold z-10 mb-4">Unlock the Power of Chaldean
+            Numerology</h2>
+          <p class="text-lg text-center text-[#e8aef5] mb-6">
+            Discover the ancient science of numbers and the hidden vibrations within your name. Gain insights into your
+            strengths, challenges, and destiny through the wisdom of Chaldean Numerology.
+          </p>
+
+        </div>
+
+
       </div>
 
       <!-- chaldean section  -->
-       <div class="min-w-[70%]  flex relative  rounded-xl max-w-[80%]  ">
+      <div class="min-w-[70%]  flex relative  rounded-xl max-w-[80%]  ">
 
-       
 
-         <div class="flex flex-col justify-center ">
-           <h2 class="text-4xl text-center font-cinema text-[#ca92e2] font-bold mb-4">Unlock the Power of Chaldean Numerology</h2>
-           <p class="text-lg text-center text-gray-200 mb-6">
-             Discover the ancient science of numbers and the hidden vibrations within your name. Gain insights into your strengths, challenges, and destiny through the wisdom of Chaldean Numerology.
-           </p>
-           
-         </div>
 
-          <img src="./assets/chad-nobg.png" alt=""
-          class="h-80 rounded-xl "
-          >
+
+        <div class="flex flex-col justify-center relative">
+
+          <h2 class="text-4xl text-center font-cinema text-white font-bold z-10 mb-4">Unlock the Power of Chaldean
+            Numerology</h2>
+          <p class="text-lg text-center text-[#e8aef5] mb-6">
+            Discover the ancient science of numbers and the hidden vibrations within your name. Gain insights into your
+            strengths, challenges, and destiny through the wisdom of Chaldean Numerology.
+          </p>
+
+        </div>
+
+
+        <img src="./assets/planets-nobg.png" alt="" class="h-80 rounded-xl ">
+
+      </div>
+
+      <!-- planets allies  -->
+      <div class="min-w-[70%]  flex relative  rounded-xl max-w-[80%]  ">
+
+
+        <img src="./assets/planets-nobg.png" alt="" class="h-80 rounded-xl ">
+
+        <div class="flex flex-col justify-center relative">
+          <!-- <img src="./assets/plan_f1.png" class="absolute w-36 top-[3%] right-[19%] z-0" alt=""> -->
+          <h2 class="text-5xl text-center font-cinema text-white font-bold z-10 mb-4">Planetary Allies</h2>
+          <p class="text-lg text-center text-[#e8aef5] mb-6">
+            Unveil the cosmic influences shaping your journey. See which planetary energies support you and which
+            challenge you along the way.
+          </p>
+
+        </div>
+
 
       </div>
 

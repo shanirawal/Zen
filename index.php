@@ -40,41 +40,43 @@
 
     <!-- hero section -->
     <section style="background-image: url('./assets/bg1.jpg');"
-      class="hero-section  bg-cover bg-center   flex flex-col justify-center items-center min-h-screen min-w-full relative ">
+  class="hero-section bg-cover bg-center flex flex-col justify-center items-center min-h-screen min-w-full relative">
 
-      <div id="starfield"></div>
+  <div id="starfield"></div>
 
-      <div class="flex flex-col  items-center justify-center w-full h-full z-10 relative">
-        <div class="w-[80%]  flex flex-col gap-3 items-center">
-          <h1 class="text-4xl mb-3 font-cinema    text-center">
-            Discover Your Cosmic Path with <br />
-            <span style='font-size:4rem; ' class="text-[#70507E] font-bold">
-              ZenStar
-            </span>
-          </h1>
-          <p class="text-md text-zinc-400 w-[60%] font-light   text-center ">
-            Step into a world where the stars speak your truth.
-            <br /> ZenStar blends ancient astrology with modern insight to
-            guide you through life’s questions — with clarity, calm, and
-            cosmic wisdom.
-          </p>
-        </div>
+  <div class="flex flex-col items-center justify-center w-full h-full z-10 relative px-4 sm:px-6">
+    <!-- Content container -->
+    <div class="w-full max-w-4xl flex flex-col gap-3 items-center">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl mb-3 font-cinema text-center">
+        Discover Your Cosmic Path with <br />
+        <span class="text-[#70507E] font-bold text-4xl sm:text-5xl md:text-6xl">
+          ZenStar
+        </span>
+      </h1>
+      <p class="text-sm sm:text-md text-zinc-400 w-full max-w-2xl font-light text-center">
+        Step into a world where the stars speak your truth.<br />
+        ZenStar blends ancient astrology with modern insight to
+        guide you through life’s questions — with clarity, calm, and
+        cosmic wisdom.
+      </p>
+    </div>
 
-        <div id="hero-get-started"
-          class="bg-[#70507E] flex items-center gap-2 mt-10 px-4 py-3 rounded mr-2 cursor-pointer hover:text-zinc-300 hover:scale-105 transition-all duration-200">
-          <p class="text-[0.9rem] ">Get started</p>
+    <div id="hero-get-started"
+      class="bg-[#70507E] flex items-center gap-2 mt-8 sm:mt-10 px-4 py-3 rounded cursor-pointer hover:text-zinc-300 hover:scale-105 transition-all duration-200">
+      <p class="text-[0.9rem]">Get started</p>
+    </div>
 
-        </div>
+    <!-- Planet 1: right side -->
+    <div class="absolute top-0 right-0 -z-1 md:right-[20%] md:-top-36">
+      <img src='./assets/planet1.png' alt="" class="w-24 sm:w-32 md:w-[200px] animate-planet-updown" />
+    </div>
 
-        <div class=" absolute right-[20%] -top-36 -z-1">
-          <img src='./assets/planet1.png' alt="" class="w-[200px] animate-planet-updown " />
-        </div>
-        <div class=" absolute left-[18%] top-32 -z-1">
-          <img src='./assets/planet2.png' alt="" class="w-[200px] animate-planet-downup" />
-        </div>
-      </div>
-
-    </section>
+    <!-- Planet 2: left side -->
+    <div class="absolute top-24 left-0 -z-1 md:left-[18%] md:top-32">
+      <img src='./assets/planet2.png' alt="" class="w-24 sm:w-32 md:w-[200px] animate-planet-downup" />
+    </div>
+  </div>
+</section>
 
     <!-- features section  -->
     <div class="min-h-screen min-w-full flex flex-col items-center  relative  ">
