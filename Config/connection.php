@@ -1,18 +1,19 @@
 <?php
 
-const HOST = 'srv1100.hstgr.io';
-const USER = 'u815663851_vd_fybca2025';
-const PASS = 'eq=otOW~7';
-const DBNAME = 'u815663851_vd_fybca2025';
+const HOST = 'localhost';
+const USER = 'root';
+const PASS = '';
+const DBNAME = 'zen';
+const PORT = 3307;
 
 if (!function_exists('connectToDB')) {
     function connectToDB()
     {
-        $conn = mysqli_connect(HOST, USER, PASS, DBNAME);
+        $conn = mysqli_connect(HOST, USER, PASS, DBNAME, PORT);
         if (!$conn) {
             die("Could not connect : " . mysqli_connect_error());
         }
-        // echo "Connected successfully <br>";
+        echo "Connected successfully <br>";
         return $conn;
     }
 }
@@ -24,3 +25,5 @@ if (!function_exists('closeConnection')) {
         mysqli_close($conn);
     }
 }
+
+?>

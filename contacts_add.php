@@ -12,7 +12,7 @@ require('Config/connection.php');
 </head>
 
 <body>
-    <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
+    <form action="contacts_save.php" method="POST">
         <table style="justify-content:center">
             <tr>
                 <td>First Name : <input type="text" name="fname" /></td>
@@ -37,27 +37,31 @@ require('Config/connection.php');
     </form>
 
     <?php
-    // ---------- Insert Data ----------
-    if (isset($_POST['submit'])) {
-        $firstName = $_POST['fname'];
-        $lastName  = $_POST['lname'];
-        $birthDate = $_POST['dob'];
-        $phone     = $_POST['phone'];
-        $email     = $_POST['email'];
+    // session_start();
+    // if (!empty($_SESSION['id']) && !empty($_SESSION['email'])){
+    //     // ---------- Insert Data ----------
+    //     if (isset($_POST['submit'])) {
+    //         $firstName = $_POST['fname'];
+    //         $lastName  = $_POST['lname'];
+    //         $birthDate = $_POST['dob'];
+    //         $phone     = $_POST['phone'];
+    //         $email     = $_POST['email'];
+    //         $id    = $_POST['id'];
 
-        if (!empty($firstName) && !empty($lastName) && !empty($birthDate) && !empty($phone) && !empty($email)) {
-            // $_SESSION[]
-            $insertQuery = "INSERT INTO contacts (firstName, lastName, birthDate, phone, email, user_id) 
-                            VALUES ('$firstName', '$lastName', '$birthDate', '$phone', '$email', )";
-            $conn = connectToDB();
-            $result = mysqli_query($conn, $insertQuery);
-            closeConnection($conn);
+    //         if (!empty($firstName) && !empty($lastName) && !empty($birthDate) && !empty($phone) && !empty($email)) {
+    //             // $_SESSION[]
+    //             $insertQuery = "INSERT INTO contacts (firstName, lastName, birthDate, phone, email, id) 
+    //                             VALUES ('$firstName', '$lastName', '$birthDate', '$phone', '$email', '$id')";
+    //             $conn = connectToDB();
+    //             $result = mysqli_query($conn, $insertQuery);
+    //             closeConnection($conn);
 
-            echo "Data saved successfully!<br>";
-        } else {
-            echo "Please enter all the values.";
-        }
-    }
+    //             echo "Data saved successfully!<br>";
+    //         } else {
+    //             echo "Please enter all the values.";
+    //         }
+    //     }
+    // }
     ?>
 </body>
 
