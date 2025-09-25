@@ -4,7 +4,10 @@ const HOST = 'localhost';
 const USER = 'root';
 const PASS = '';
 const DBNAME = 'zen';
+<<<<<<< Updated upstream
 const PORT = 3307;
+=======
+>>>>>>> Stashed changes
 
 if (!function_exists('connectToDB')) {
     function connectToDB()

@@ -1,3 +1,8 @@
+<?php
+require_once('Config/sessions.php');
+require_once('Models/Contact.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,7 +43,23 @@
             </p>
         </div>
 
-        <form class="space-y-5">
+        <form id="chaldeanForm" name="chaldeanForm" class="space-y-5">
+            <?php
+            $contacts = Contact::getAll($sessionUserId);
+            ?>
+            <div>
+                <label for="contactDropdown" class="block text-sm font-medium text-zinc-200 mb-1">Contact</label>
+                <select id="contactDropdown" name="contactDropdown" required
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#ff92fb] focus:border-transparent">
+                    <option value="">Select Contact</option>
+                    <?php foreach ($contacts as $key => $contact) { ?>
+                        <option value="<?= $contact['id']; ?>" data-birthdate="<?= $contact['birthDate']; ?>"
+                            data-fullName="<?= $contact['fullName']; ?>">
+                            <?= $contact['fullName']; ?>
+                        </option>
+                    <?php } ?>
+                </select>
+            </div>
             <div>
                 <label for="fullName" class="block text-sm font-medium text-zinc-200 mb-1">Full Name (First + Last)</label>
                 <input
@@ -106,6 +127,20 @@
         const closeModalBtn = document.getElementById('closeModalBtn');
         const acceptBtn = document.getElementById('acceptBtn');
         const declineBtn = document.getElementById('declineBtn');
+
+        const contactDropdown = document.getElementById('contactDropdown');
+
+        // Add an event listener for the change event
+        contactDropdown.addEventListener('change', () => {
+            // Get the selected option
+            const selectedOption = contactDropdown.options[contactDropdown.selectedIndex];
+
+            // Get the data attribute (data-info in this example)
+            const dataValue = selectedOption.getAttribute('data-info');
+
+            document.getElementById('birthDate').value = selectedOption.getAttribute('data-birthdate');
+            document.getElementById('fullName').value = selectedOption.getAttribute('data-fullName');
+        });
 
         // Chaldean mapping
         const chaldeanMap = {
