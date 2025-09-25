@@ -19,7 +19,6 @@ require_once('Models/Contact.php');
 
 <body class="bg-[#1a0c1f] min-h-screen flex flex-col items-center justify-center p-4">
     <?php
-    $contact = null;
     if (!empty($_GET['id']) && is_numeric($_GET['id'])) {
         $contact = Contact::findById($_GET['id']);
     } else {
@@ -54,7 +53,8 @@ require_once('Models/Contact.php');
                 <p class="text-gray-300">Update your details below</p>
             </div>
 
-            <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" class="space-y-6">
+            <form action="<?= 'contacts_save.php?id=' . $contact['id']; ?>" method="POST" class="space-y-6">
+                <input type="hidden" name="contactId" value="<?= $contact['id'] ?? '' ?>">
                 <div>
                     <label class="block text-sm font-medium text-gray-200 mb-2">First Name : </label>
                     <input type="text" name="fname" value="<?= $contact['firstName'] ?? '' ?>"
@@ -94,27 +94,14 @@ require_once('Models/Contact.php');
                     </button>
                 </div>
             </form>
-            <?php
-            if (!empty($_POST['user_id'])) {
-                $conn = connectToDB();
-                $sql = "select * from contacts where Id = " . $_POST['user_id'];
-                $result = mysqli_query($conn, $sql);
-                closeConnection($conn);
-                $contact = mysqli_fetch_assoc($result);
-                $result = mysqli_query($conn, $sql);
 
-                if ($result) {
-                    echo '<div class="bg-green-900/50 border border-green-700 text-green-200 px-4 py-3 rounded-lg text-center">Data saved successfully!</div>';
-                } else {
-                    echo '<div class="bg-red-900/50 border border-red-700 text-red-200 px-4 py-3 rounded-lg text-center">Error: ' . mysqli_error($conn) . '</div>';
-                }
-
-                closeConnection($conn);
-            } else {
-                echo '<div class="bg-red-900/50 border border-red-700 text-red-200 px-4 py-3 rounded-lg text-center">Please enter all the values.</div>';
+            <!-- }
             }
+            // else {
+            //     echo '<div class="bg-red-900/50 border border-red-700 text-red-200 px-4 py-3 rounded-lg text-center">Please enter all the values.</div>';
+            // }?> -->
 
-            ?>
+
         </div>
     </div>
 </body>

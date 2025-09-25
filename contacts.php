@@ -45,6 +45,33 @@ require_once('Models/Contact.php');
                 class="bg-[#ffdcfe] hover:bg-[#fff] text-[#4e114a] font-medium  px-5 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
                 Add Contact
             </button>
+
+            <div>
+                <?php
+                $status = $_SESSION['contactSaveStatus'] ?? '';
+                unset($_SESSION['contactSaveStatus']);
+
+                switch ($status) {
+                    case 'success':
+                        $message = 'Data saved successfully!';
+                        $color = 'green';
+                        break;
+                    case 'failed':
+                        $message = 'Failed';
+                        $color = 'red';
+                        break;
+                    default:
+                        $message = '';
+                        $color = '';
+                        break;
+                }
+
+                if (!empty($message)): ?>
+                    <div class="bg-<?= $color ?>-900/50 border border-<?= $color ?>-700 text-<?= $color ?>-200 px-4 py-3 rounded-lg text-center">
+                        <?= $message ?>
+                    </div>
+                <?php endif; ?>
+            </div>
         </div>
 
         <div
