@@ -91,7 +91,7 @@ require_once('Models/Contact.php');
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-200"><?= $contact['phone'] ?></td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-200"><?= $contact['email'] ?></td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm">
-                                    <a href="contacts.php?conName=<?= urlencode($contact['firstName']) ?>"
+                                    <a href="contacts_edit.php?id=<?= $contact['id'] ?>"
                                         class="bg-gradient-to-r from-[#6b46c1] to-[#553c9a] px-3 py-1 rounded text-sm font-medium text-white hover:bg-gradient-to-r hover:from-[#553c9a] hover:to-[#44307d] transition-all">
                                         Edit
                                     </a>

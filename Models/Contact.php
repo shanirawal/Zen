@@ -15,4 +15,26 @@ final class Contact
 
         return $contacts ?? [];
     }
+
+    public static function findById(int $id): ?array
+    {
+        $conn = connectToDB();
+        $sql = "SELECT *, CONCAT(firstName, ' ', lastName) as fullName FROM contacts where id=$id";
+        $result = mysqli_query($conn, $sql);
+        $contact = mysqli_fetch_assoc($result);
+        closeConnection($conn);
+
+        return $contact;
+    }
+
+    public static function update(int $id): ?array
+    {
+        $conn = connectToDB();
+        $sql = "SELECT *, CONCAT(firstName, ' ', lastName) as fullName FROM contacts where id=$id";
+        $result = mysqli_query($conn, $sql);
+        $contact = mysqli_fetch_assoc($result);
+        closeConnection($conn);
+
+        return $contact;
+    }
 }

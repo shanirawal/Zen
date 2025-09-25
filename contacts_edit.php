@@ -1,3 +1,7 @@
+<?php
+require('Config/sessions.php');
+require_once('Models/Contact.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,12 +10,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Categories - Edit Page</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            color: white;
+        }
+    </style>
 </head>
 
-
-
 <body class="bg-[#1a0c1f] min-h-screen flex flex-col items-center justify-center p-4">
-    
+    <?php
+    $contact = null;
+    if (!empty($_GET['id']) && is_numeric($_GET['id'])) {
+        $contact = Contact::findById($_GET['id']);
+    } else {
+        echo "Invalid Contact ID";
+        die;
+    }
+    ?>
     <nav class=" fixed top-0 left-0 w-full flex items-center justify-between px-4 py-3 bg-[#1a0c1f]/90 backdrop-blur-md z-50 border-b border-[rgba(107,70,193,0.3)] ">
         <div class="flex items-center">
             <img src="./assets/zenstar2.png" alt="Logo"
@@ -22,7 +37,6 @@
             Back
         </button>
     </nav>
-
 
     <div class="w-full max-w-2xl">
 
@@ -40,38 +54,35 @@
                 <p class="text-gray-300">Update your details below</p>
             </div>
 
-            <form action="contacts_save.php" method="POST" class="space-y-6">
+            <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" class="space-y-6">
                 <div>
                     <label class="block text-sm font-medium text-gray-200 mb-2">First Name : </label>
-                    <input type="text" name="fname" value="<?= isset($contact) ? $contact['firstName'] : '' ?>"
-                        class="w-full px-4 py-3 bg-[rgba(26,12,31,0.6)] border border-[rgba(107,70,193,0.4)] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#6b46c1] focus:border-transparent transition-all"
-                        />
+                    <input type="text" name="fname" value="<?= $contact['firstName'] ?? '' ?>"
+                        class="w-full px-4 py-3 bg-[rgba(26,12,31,0.6)] border border-[rgba(107,70,193,0.4)] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#6b46c1] focus:border-transparent transition-all" />
                 </div>
 
                 <div>
                     <label class="block text-sm font-medium text-gray-200 mb-2">Last Name : </label>
-                    <input type="text" name="lname" value="<?= isset($contact) ? $contact['lastName'] : '' ?>"
-                        class="w-full px-4 py-3 bg-[rgba(26,12,31,0.6)] border border-[rgba(107,70,193,0.4)] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#6b46c1] focus:border-transparent transition-all"
-                        />
+                    <input type="text" name="lname" value="<?= $contact['lastName'] ?? '' ?>"
+                        class="w-full px-4 py-3 bg-[rgba(26,12,31,0.6)] border border-[rgba(107,70,193,0.4)] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#6b46c1] focus:border-transparent transition-all" />
                 </div>
 
                 <div>
                     <label class="block text-sm font-medium text-gray-200 mb-2">Birth Date : </label>
-                    <input type="date" name="dob" value="<?= isset($contact) ? $contact['birthDate'] : '' ?>"
-                        class="w-full px-4 py-3 bg-[rgba(26,12,31,0.6)] border border-[rgba(107,70,193,0.4)] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#6b46c1] focus:border-transparent transition-all"
-                        />
+                    <input type="date" name="dob" value="<?= $contact['birthDate'] ?? '' ?>"
+                        class="w-full px-4 py-3 bg-[rgba(26,12,31,0.6)] border border-[rgba(107,70,193,0.4)] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#6b46c1] focus:border-transparent transition-all" />
                 </div>
 
                 <div>
                     <label class="block text-sm font-medium text-gray-200 mb-2">Phone no. : </label>
-                    <input type="text" name="phone" value="<?= isset($contact) ? $contact['phone'] : '' ?>"
+                    <input type="text" name="phone" value="<?= $contact['phone'] ?? '' ?>"
                         class="w-full px-4 py-3 bg-[rgba(26,12,31,0.6)] border border-[rgba(107,70,193,0.4)] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#6b46c1] focus:border-transparent transition-all"
                         placeholder="+91 12345 67890" />
                 </div>
 
                 <div>
                     <label class="block text-sm font-medium text-gray-200 mb-2">Email : </label>
-                    <input type="text" name="email" value="<?= isset($contact) ? $contact['email'] : '' ?>"
+                    <input type="text" name="email" value="<?= $contact['email'] ?? '' ?>"
                         class="w-full px-4 py-3 bg-[rgba(26,12,31,0.6)] border border-[rgba(107,70,193,0.4)] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#6b46c1] focus:border-transparent transition-all"
                         placeholder="example@email.com" />
                 </div>
@@ -84,31 +95,26 @@
                 </div>
             </form>
             <?php
-            session_start();
-        if (!empty($_POST['user_id'])) {
-            echo "<pre>";
+            if (!empty($_POST['user_id'])) {
+                $conn = connectToDB();
+                $sql = "select * from contacts where Id = " . $_POST['user_id'];
+                $result = mysqli_query($conn, $sql);
+                closeConnection($conn);
+                $contact = mysqli_fetch_assoc($result);
+                $result = mysqli_query($conn, $sql);
 
-            ini_set('display_errors', 'TRUE');
-            require('../Config/connection.php');
-            $conn = connectToDB();
-            $sql = "select * from contacts where Id = " . $_POST['user_id'];
-            $result = mysqli_query($conn, $sql);
-            closeConnection($conn);
-            $contact = mysqli_fetch_assoc($result);
-            $result = mysqli_query($conn, $sql);
-
-                    if ($result) {
-                        echo '<div class="bg-green-900/50 border border-green-700 text-green-200 px-4 py-3 rounded-lg text-center">Data saved successfully!</div>';
-                    } else {
-                        echo '<div class="bg-red-900/50 border border-red-700 text-red-200 px-4 py-3 rounded-lg text-center">Error: ' . mysqli_error($conn) . '</div>';
-                    }
-
-                    closeConnection($conn);
+                if ($result) {
+                    echo '<div class="bg-green-900/50 border border-green-700 text-green-200 px-4 py-3 rounded-lg text-center">Data saved successfully!</div>';
                 } else {
-                    echo '<div class="bg-red-900/50 border border-red-700 text-red-200 px-4 py-3 rounded-lg text-center">Please enter all the values.</div>';
+                    echo '<div class="bg-red-900/50 border border-red-700 text-red-200 px-4 py-3 rounded-lg text-center">Error: ' . mysqli_error($conn) . '</div>';
                 }
 
-        ?>
+                closeConnection($conn);
+            } else {
+                echo '<div class="bg-red-900/50 border border-red-700 text-red-200 px-4 py-3 rounded-lg text-center">Please enter all the values.</div>';
+            }
+
+            ?>
         </div>
     </div>
 </body>
