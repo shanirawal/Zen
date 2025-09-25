@@ -111,6 +111,10 @@ require('Config/connection.php');
         <!-- PHP Output Section -->
         <div class="mt-6">
             <?php
+            session_start();
+        echo "<pre>";
+        print_r($_SESSION);
+    die;
             // ---------- Insert Data ----------
             if (isset($_POST['submit'])) {
                 $firstName = $_POST['fname'];
@@ -122,9 +126,9 @@ require('Config/connection.php');
                 if (!empty($firstName) && !empty($lastName) && !empty($birthDate) && !empty($phone) && !empty($email)) {
                     $conn = connectToDB();
 
-                    
-                    $insertQuery = "INSERT INTO contacts (firstName, lastName, birthDate, phone, email) 
-                                    VALUES ('$firstName', '$lastName', '$birthDate', '$phone', '$email')";
+                    $user_id = $_SESSION['user_id'];
+                    $insertQuery = "INSERT INTO contacts (user_id, firstName, lastName, birthDate, phone, email) 
+                                    VALUES ($user_id, '$firstName', '$lastName', '$birthDate', '$phone', '$email')";
 
                     $result = mysqli_query($conn, $insertQuery);
 
