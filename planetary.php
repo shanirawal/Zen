@@ -48,7 +48,7 @@ require_once('Models/Contact.php');
             <div>
                 <label for="contactDropdown" class="block text-sm font-medium text-zinc-200 mb-1">Contact</label>
                 <select id="contactDropdown" name="contactDropdown" required
-                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#ff92fb] focus:border-transparent">
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#ff92fb] focus:border-transparent" style="color:black">
                     <option value="">Select Contact</option>
                     <?php foreach ($contacts as $key => $contact) { ?>
                         <option value="<?= $contact['id']; ?>" data-birthdate="<?= $contact['birthDate']; ?>"
@@ -62,7 +62,7 @@ require_once('Models/Contact.php');
             <div>
                 <label for="fullName" class="block text-sm font-medium text-zinc-200 mb-1">Full Name</label>
                 <input type="text" id="fullName" name="fullName" required
-                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#ff92fb] focus:border-transparent"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#ff92fb] focus:border-transparent" style="color:black"
                     placeholder="Enter your full name">
             </div>
 

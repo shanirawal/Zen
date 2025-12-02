@@ -1,9 +1,9 @@
 <?php
 
-const HOST = 'srv1100.hstgr.io';
-const USER = 'u815663851_vd_fybca2025';
-const PASS = 'eq=otOW~7';
-const DBNAME = 'u815663851_vd_fybca2025';
+const HOST = 'localhost';
+const USER = 'root';
+const PASS = '';
+const DBNAME = 'zen';
 
 if (!function_exists('connectToDB')) {
     function connectToDB()

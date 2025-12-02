@@ -25,6 +25,9 @@
           <!-- Desktop navigation -->
           <div class="hidden md:flex md:items-center md:space-x-8">
             
+            <a onclick="window.location.href='home.php'" 
+              class="text-zinc-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors duration-200">Home</a>
+
             <a onclick="window.location.href='features.html'" 
               class="text-zinc-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors duration-200">Features</a>
 
