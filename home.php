@@ -25,9 +25,7 @@
           <!-- Desktop navigation -->
           <div class="hidden md:flex md:items-center md:space-x-8">
             
-            <a onclick="window.location.href='home.php'" 
-              class="text-zinc-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors duration-200">Home</a>
-
+           
             <a onclick="window.location.href='features.html'" 
               class="text-zinc-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors duration-200">Features</a>
 
@@ -47,9 +45,8 @@
 
               <!-- Dropdown menu -->
               <div
-                class="hidden absolute right-0 mt-40 w-48 bg-white rounded-md shadow-lg py-1 ring-1 ring-black ring-opacity-5 focus:outline-none"
+                class="hidden absolute right-0 mt-20 w-48 bg-white rounded-md shadow-lg py-1 ring-1 ring-black ring-opacity-5 focus:outline-none"
                 id="dropdown-menu">
-                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Your Profile</a>
                 
                 <a href="logout.php?action=run" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign
                   out</a>
@@ -108,73 +105,64 @@
 
     
 
-    <div class="w-full space-y-3   mb-[10rem] flex flex-col items-center justify-center bg-cover  bg-center " style="background-image: url('./assets/starrybgHome.png');">
+    <div class="w-full space-y-3 mb-[10rem] flex flex-col items-center justify-center bg-cover bg-center px-4"
+  style="background-image: url('./assets/starrybgHome.png');">
 
+  <!-- personality traits section -->
+  <div class="min-w-[70%] max-w-[80%] flex flex-col md:flex-row relative rounded-xl items-center gap-4">
 
+    <img src="./assets/planets-nobg.png" alt="" class="h-60 md:h-80 rounded-xl">
 
-
-      <!-- personality traits section -->
-      <div class="min-w-[70%]  flex relative  rounded-xl max-w-[80%]  ">
-
-
-        <img src="./assets/planets-nobg.png" alt="" class="h-80 rounded-xl ">
-
-        <div class="flex flex-col justify-center relative">
-
-          <h2 class="text-4xl text-center font-cinema text-white font-bold z-10 mb-4">Unlock the Power of Chaldean
-            Numerology</h2>
-          <p class="text-lg text-center text-[#e8aef5] mb-6">
-            Discover the ancient science of numbers and the hidden vibrations within your name. Gain insights into your
-            strengths, challenges, and destiny through the wisdom of Chaldean Numerology.
-          </p>
-
-        </div>
-
-
-      </div>
-
-      <!-- chaldean section  -->
-      <div class="min-w-[70%]  flex relative  rounded-xl max-w-[80%]  ">
-
-
-
-
-        <div class="flex flex-col justify-center relative">
-
-          <h2 class="text-4xl text-center font-cinema text-white font-bold z-10 mb-4">Unlock the Power of Chaldean
-            Numerology</h2>
-          <p class="text-lg text-center text-[#e8aef5] mb-6">
-            Discover the ancient science of numbers and the hidden vibrations within your name. Gain insights into your
-            strengths, challenges, and destiny through the wisdom of Chaldean Numerology.
-          </p>
-
-        </div>
-
-
-        <img src="./assets/planets-nobg.png" alt="" class="h-80 rounded-xl ">
-
-      </div>
-
-      <!-- planets allies  -->
-      <div class="min-w-[70%]  flex relative  rounded-xl max-w-[80%]  ">
-
-
-        <img src="./assets/planets-nobg.png" alt="" class="h-80 rounded-xl ">
-
-        <div class="flex flex-col justify-center relative">
-          <!-- <img src="./assets/plan_f1.png" class="absolute w-36 top-[3%] right-[19%] z-0" alt=""> -->
-          <h2 class="text-5xl text-center font-cinema text-white font-bold z-10 mb-4">Planetary Allies</h2>
-          <p class="text-lg text-center text-[#e8aef5] mb-6">
-            Unveil the cosmic influences shaping your journey. See which planetary energies support you and which
-            challenge you along the way.
-          </p>
-
-        </div>
-
-
-      </div>
-
+    <div class="flex flex-col justify-center relative">
+      <h2 class="text-4xl text-center font-cinema text-white font-bold z-10 mb-4">
+        Unlock the Power of Chaldean Numerology
+      </h2>
+      <p class="text-lg text-center text-[#e8aef5] mb-6">
+        Discover the ancient science of numbers and the hidden vibrations within your name. Gain insights into your
+        strengths, challenges, and destiny through the wisdom of Chaldean Numerology.
+      </p>
     </div>
+
+  </div>
+
+
+  <!-- chaldean section -->
+  <div class="min-w-[70%] max-w-[80%] flex flex-col md:flex-row-reverse relative rounded-xl items-center gap-4">
+
+    <div class="flex flex-col justify-center relative">
+      <h2 class="text-4xl text-center font-cinema text-white font-bold z-10 mb-4">
+        Unlock the Power of Chaldean Numerology
+      </h2>
+      <p class="text-lg text-center text-[#e8aef5] mb-6">
+        Discover the ancient science of numbers and the hidden vibrations within your name. Gain insights into your
+        strengths, challenges, and destiny through the wisdom of Chaldean Numerology.
+      </p>
+    </div>
+
+    <img src="./assets/planets-nobg.png" alt="" class="h-60 md:h-80 rounded-xl">
+
+  </div>
+
+
+  <!-- planets allies -->
+  <div class="min-w-[70%] max-w-[80%] flex flex-col md:flex-row relative rounded-xl items-center gap-4">
+
+    <img src="./assets/planets-nobg.png" alt="" class="h-60 md:h-80 rounded-xl">
+
+    <div class="flex flex-col justify-center relative">
+      <h2 class="text-5xl text-center font-cinema text-white font-bold z-10 mb-4">
+        Planetary Allies
+      </h2>
+      <p class="text-lg text-center text-[#e8aef5] mb-6">
+        Unveil the cosmic influences shaping your journey. See which planetary energies support you and which challenge
+        you along the way.
+      </p>
+    </div>
+
+  </div>
+
+</div>
+
 
     <footer class="bg-[#1f0f1f]  text-white py-12">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -187,7 +175,9 @@
               personalized insights for self-discovery and personal growth.
 
             </p>
-            <div class="flex space-x-4">
+
+            <!-- logos -->
+            <!-- <div class="flex space-x-4">
               <a href="#" class="text-gray-400 hover:text-white transition-colors">
                 <span class="sr-only">Facebook</span>
                 <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -218,7 +208,7 @@
                     d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                 </svg>
               </a>
-            </div>
+            </div> -->
           </div>
 
           <!-- Quick Links -->
@@ -226,9 +216,9 @@
             <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
             <ul class="space-y-2">
               <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
-              <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+              <!-- <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
 
-              <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li> -->
             </ul>
           </div>
 
@@ -243,28 +233,28 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <span>123 Street Name, City, Country</span>
+                <span>Surat,Gujarat</span>
               </li>
               <li class="flex items-start">
                 <svg class="h-5 w-5 mr-2 mt-0.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                <span>+1 (555) 123-4567</span>
+                <span>+91 9773109686</span>
               </li>
-              <li class="flex items-start">
+              <!-- <li class="flex items-start">
                 <svg class="h-5 w-5 mr-2 mt-0.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
                 <span>info@company.com</span>
-              </li>
+              </li> -->
             </ul>
           </div>
         </div>
 
-        <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p class="text-gray-400 text-sm">
+        <div class="border-t  border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-center items-center">
+          <p class="text-gray-400 text-sm ">
             &copy; 2025 Zenstar. All rights reserved.
           </p>
 
