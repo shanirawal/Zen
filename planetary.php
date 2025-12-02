@@ -270,50 +270,50 @@ require_once('Models/Contact.php');
                 case 10:
                 case 19:
                 case 28:
-                    characterTrait = "Your ruling planet is SUN. Medical related, Metals related!";
+                    characterTrait = "Your ruling planet is SUN – the planet of leadership & vitality. You’re born for dominance, confidence, and visibility. Best suited for medical fields, metals, administration, authority roles, and entrepreneurship. Your energy attracts respect and recognition.";
                     break;
                 case 2:
                 case 11:
                 case 20:
                 case 29:
-                    characterTrait = "Your ruling planet is MOON. Silver related, emotional related!";
+                    characterTrait = "Your ruling planet is MOON – symbol of emotions & intuition. You have a naturally caring, artistic, and adaptive personality. Strong connections with silver, creativity, healing, hospitality, psychology, and water-related fields.";
                     break;
                 case 3:
                 case 12:
                 case 21:
                 case 30:
-                    characterTrait = "Your ruling planet is JUPITER. Higher education";
+                    characterTrait = "Your ruling planet is JUPITER – the planet of wisdom & expansion. You excel in higher education, teaching, spirituality, law, finance, and advisory roles. Your presence brings growth, prosperity, and optimism.";
                     break;
                 case 4:
                 case 13:
                 case 22:
                 case 31:
-                    characterTrait = "Your ruling planet is RAHU. All types of business, All in one!";
+                    characterTrait = "Your ruling planet is RAHU – the master of innovation & illusion. Multitalented, sharp-minded, and futuristic. You thrive in business, technology, foreign trade, digital work, marketing, and unconventional careers. You're an 'all-in-one' powerhouse.";
                     break;
                 case 5:
                 case 14:
                 case 23:
-                    characterTrait = "Your ruling planet is MERCURY. Education -> primary, secondary!";
+                    characterTrait = "Your ruling planet is MERCURY – the planet of intelligence & communication. You shine in education (primary/secondary), writing, analysis, media, trading, communication, and IT-related work. Quick thinker with excellent negotiation skills.";
                     break;
                 case 6:
                 case 15:
                 case 24:
-                    characterTrait = "Your ruling planet is VENUS. Designing related, luxury business!";
+                    characterTrait = "Your ruling planet is VENUS – symbol of beauty & luxury. Creative, stylish, and harmony-driven. Ideal for designing, fashion, luxury business, beauty industry, entertainment, art, hospitality, and relationships-focused work.";
                     break;
                 case 7:
                 case 16:
                 case 25:
-                    characterTrait = "Your ruling planet is KETU. Ocult science related work!";
+                    characterTrait = "Your ruling planet is KETU – the planet of spirituality & mysticism. Deep thinker, detached, intuitive, and research oriented. Perfect for occult sciences, astrology, healing therapies, research, IT security, investigation, or spiritual work.";
                     break;
                 case 8:
                 case 17:
                 case 26:
-                    characterTrait = "Your ruling planet is SATURN. Iron related work!";
+                    characterTrait = "Your ruling planet is SATURN – the planet of discipline & structure. Hardworking, patient, and extremely reliable. You excel in iron/metal work, machinery, engineering, law, real estate, labor-intensive fields, and long-term businesses.";
                     break;
                 case 9:
                 case 18:
                 case 27:
-                    characterTrait = "Your ruling planet is MARS. Fighting, Police, Army";
+                    characterTrait = "Your ruling planet is MARS – planet of courage & action. Bold, competitive, and full of energy. Perfect for police, army, security, sports, fire-related fields, mechanics, and any role requiring strength & leadership.";
                     break;
             }
 
