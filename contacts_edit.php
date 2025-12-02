@@ -10,7 +10,6 @@ require_once('Models/Contact.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Categories - Edit Page</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
     <style>
         body {
             color: white;
@@ -20,15 +19,13 @@ require_once('Models/Contact.php');
 
 <body class="bg-[#1a0c1f] min-h-screen flex flex-col items-center justify-center p-4">
     <?php
-    $contact = null;
     if (!empty($_GET['id']) && is_numeric($_GET['id'])) {
         $contact = Contact::findById($_GET['id']);
     } else {
         echo "Invalid Contact ID";
-        //die;
+        die;
     }
     ?>
-
     <nav class=" fixed top-0 left-0 w-full flex items-center justify-between px-4 py-3 bg-[#1a0c1f]/90 backdrop-blur-md z-50 border-b border-[rgba(107,70,193,0.3)] ">
         <div class="flex items-center">
             <img src="./assets/zenstar2.png" alt="Logo"
@@ -39,14 +36,11 @@ require_once('Models/Contact.php');
             Back
         </button>
     </nav>
-    
 
-    <div class="w-full max-w-2xl  ">
-
-    
+    <div class="w-full max-w-2xl">
 
         <div
-            class="bg-[rgba(34,19,51,0.7)] backdrop-blur-md border border-[rgba(107,70,193,0.3)] rounded-2xl  shadow-xl p-8 mt-24">
+            class="bg-[rgba(34,19,51,0.7)] backdrop-blur-md border border-[rgba(107,70,193,0.3)] rounded-2xl shadow-xl p-8">
             <div class="text-center mb-8">
                 <h1 class="text-3xl font-bold text-white mb-2 flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-3 text-purple-300" fill="none"
@@ -54,12 +48,13 @@ require_once('Models/Contact.php');
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                     </svg>
-                   
+                    Edit Category
                 </h1>
                 <p class="text-gray-300">Update your details below</p>
             </div>
 
-            <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" class="space-y-6">
+            <form action="<?= 'contacts_save.php?id=' . $contact['id']; ?>" method="POST" class="space-y-6">
+                <input type="hidden" name="contactId" value="<?= $contact['id'] ?? '' ?>">
                 <div>
                     <label class="block text-sm font-medium text-gray-200 mb-2">First Name : </label>
                     <input type="text" name="fname" value="<?= $contact['firstName'] ?? '' ?>"
@@ -99,27 +94,14 @@ require_once('Models/Contact.php');
                     </button>
                 </div>
             </form>
-            <?php
-            if (!empty($_POST['user_id'])) {
-                $conn = connectToDB();
-                $sql = "select * from contacts where Id = " . $_POST['user_id'];
-                $result = mysqli_query($conn, $sql);
-                closeConnection($conn);
-                $contact = mysqli_fetch_assoc($result);
-                $result = mysqli_query($conn, $sql);
 
-               if ($result) {
-                    echo '<div class="bg-green-900/50 border border-green-700 text-green-200 px-4 py-3 rounded-lg text-center">Data saved successfully!</div>';
-                } else {
-                    echo '<div class="bg-red-900/50 border border-red-700 text-red-200 px-4 py-3 rounded-lg text-center">Error: ' . mysqli_error($conn) . '</div>';
-                }
+            <!-- }
+            }
+            // else {
+            //     echo '<div class="bg-red-900/50 border border-red-700 text-red-200 px-4 py-3 rounded-lg text-center">Please enter all the values.</div>';
+            // }?> -->
 
-                closeConnection($conn);
-            } else {
-                echo '<div class="bg-red-900/50 border border-red-700 text-red-200 px-4 py-3 rounded-lg text-center">Please enter all the values.</div>';
-             }
 
-            ?>
         </div>
     </div>
 </body>

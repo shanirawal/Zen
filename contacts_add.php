@@ -1,23 +1,28 @@
 <?php
-ini_set('display_errors', 'TRUE');
-require('Config/connection.php');
+require('Config/sessions.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Contacts</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            color: white;
+        }
+    </style>
 </head>
+
 <body class="bg-[#1a0c1f] min-h-screen flex flex-col items-center justify-center p-4">
     <nav class=" w-full  px-10  flex items-center justify-between ">
         <div class="flex items-center">
-            <img 
-                src="./assets/zenstar2.png" 
-                alt="Logo" 
-                class="h-12 w-12 rounded-lg object-cover border-2 border-white/20"
-            />
+            <img
+                src="./assets/zenstar2.png"
+                alt="Logo"
+                class="h-12 w-12 rounded-lg object-cover border-2 border-white/20" />
         </div>
         <button
             onclick="window.location.href='home.php'"
@@ -41,67 +46,60 @@ require('Config/connection.php');
             <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" class="space-y-6">
                 <div>
                     <label class="block text-sm font-medium text-gray-200 mb-2">First Name</label>
-                    <input 
-                        type="text" 
+                    <input
+                        type="text"
                         name="fname"
                         class="w-full px-4 py-3 bg-[rgba(26,12,31,0.6)] border border-[rgba(107,70,193,0.4)] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#6b46c1] focus:border-transparent transition-all"
-                        placeholder="Enter first name"
-                    />
+                        placeholder="Enter first name" />
                 </div>
 
                 <div>
                     <label class="block text-sm font-medium text-gray-200 mb-2">Last Name</label>
-                    <input 
-                        type="text" 
+                    <input
+                        type="text"
                         name="lname"
                         class="w-full px-4 py-3 bg-[rgba(26,12,31,0.6)] border border-[rgba(107,70,193,0.4)] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#6b46c1] focus:border-transparent transition-all"
-                        placeholder="Enter last name"
-                    />
+                        placeholder="Enter last name" />
                 </div>
 
                 <div>
                     <label class="block text-sm font-medium text-gray-200 mb-2">Birth Date</label>
-                    <input 
-                        type="date" 
+                    <input
+                        type="date"
                         name="dob"
-                        class="w-full px-4 py-3 bg-[rgba(26,12,31,0.6)] border border-[rgba(107,70,193,0.4)] rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#6b46c1] focus:border-transparent transition-all"
-                    />
+                        class="w-full px-4 py-3 bg-[rgba(26,12,31,0.6)] border border-[rgba(107,70,193,0.4)] rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#6b46c1] focus:border-transparent transition-all" />
                 </div>
 
                 <div>
                     <label class="block text-sm font-medium text-gray-200 mb-2">Phone No.</label>
-                    <input 
-                        type="text" 
+                    <input
+                        type="text"
                         name="phone"
                         class="w-full px-4 py-3 bg-[rgba(26,12,31,0.6)] border border-[rgba(107,70,193,0.4)] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#6b46c1] focus:border-transparent transition-all"
-                        placeholder="(555) 123-4567"
-                    />
+                        placeholder="(555) 123-4567" />
                 </div>
 
                 <div>
                     <label class="block text-sm font-medium text-gray-200 mb-2">Email</label>
-                    <input 
-                        type="email" 
+                    <input
+                        type="email"
                         name="email"
                         class="w-full px-4 py-3 bg-[rgba(26,12,31,0.6)] border border-[rgba(107,70,193,0.4)] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#6b46c1] focus:border-transparent transition-all"
-                        placeholder="example@email.com"
-                    />
+                        placeholder="example@email.com" />
                 </div>
 
                 <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                    <button 
-                        type="submit" 
+                    <button
+                        type="submit"
                         name="submit"
-                        class="flex-1 py-3 px-6 bg-gradient-to-r from-[#6b46c1] to-[#553c9a] hover:from-[#553c9a] hover:to-[#44307d] text-white font-medium rounded-lg transition-all hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#6b46c1] focus:ring-offset-2 focus:ring-offset-[#1a0c1f]"
-                    >
+                        class="flex-1 py-3 px-6 bg-gradient-to-r from-[#6b46c1] to-[#553c9a] hover:from-[#553c9a] hover:to-[#44307d] text-white font-medium rounded-lg transition-all hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#6b46c1] focus:ring-offset-2 focus:ring-offset-[#1a0c1f]">
                         Submit
                     </button>
-                    <button 
+                    <button
                         onclick="window.location.href='contacts.php'"
-                         type="button"
+                        type="button"
                         name="view"
-                        class="flex-1 py-3 px-6 bg-[#2f1f2f] border border-[#553c9a] text-purple-200 font-medium rounded-lg hover:bg-[#3a2a3a] hover:text-white transition-all focus:outline-none focus:ring-2 focus:ring-[#553c9a] focus:ring-offset-2 focus:ring-offset-[#1a0c1f]"
-                    >
+                        class="flex-1 py-3 px-6 bg-[#2f1f2f] border border-[#553c9a] text-purple-200 font-medium rounded-lg hover:bg-[#3a2a3a] hover:text-white transition-all focus:outline-none focus:ring-2 focus:ring-[#553c9a] focus:ring-offset-2 focus:ring-offset-[#1a0c1f]">
                         View Contacts
                     </button>
                 </div>
@@ -122,9 +120,8 @@ require('Config/connection.php');
                 if (!empty($firstName) && !empty($lastName) && !empty($birthDate) && !empty($phone) && !empty($email)) {
                     $conn = connectToDB();
 
-                    
-                    $insertQuery = "INSERT INTO contacts (firstName, lastName, birthDate, phone, email) 
-                                    VALUES ('$firstName', '$lastName', '$birthDate', '$phone', '$email')";
+                    $insertQuery = "INSERT INTO contacts (user_id, firstName, lastName, birthDate, phone, email) 
+                                    VALUES ($sessionUserId, '$firstName', '$lastName', '$birthDate', '$phone', '$email')";
 
                     $result = mysqli_query($conn, $insertQuery);
 
@@ -143,4 +140,5 @@ require('Config/connection.php');
         </div>
     </div>
 </body>
+
 </html>
