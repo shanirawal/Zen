@@ -18,14 +18,14 @@ require_once('Models/Contact.php');
     <main class="max-w-7xl mx-auto px-4 py-8">
 
         <nav class=" w-full  mb-5 flex items-center justify-between ">
+            <button onclick="window.location.href='home.php'"
+                class="bg-[#38003b] hover:bg-[#4e114a] text-white font-medium py-2 px-5 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
+                Back 
+            </button>
             <div class="flex items-center">
                 <img src="./assets/zenstar2.png" alt="Logo"
                     class="h-12 w-12 rounded-lg object-cover border-2 border-white/20" />
             </div>
-            <button onclick="window.location.href='home.php'"
-                class="bg-[#38003b] hover:bg-[#4e114a] text-white font-medium py-2 px-5 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
-                Back to Home
-            </button>
         </nav>
 
 
@@ -41,10 +41,7 @@ require_once('Models/Contact.php');
 
             </div>
 
-            <button onclick="window.location.href='contacts_add.php'"
-                class="bg-[#ffdcfe] hover:bg-[#fff] text-[#4e114a] font-medium  px-5 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
-                Add Contact
-            </button>
+            
 
             <div>
                 <?php
@@ -72,6 +69,11 @@ require_once('Models/Contact.php');
                     </div>
                 <?php endif; ?>
             </div>
+
+            <button onclick="window.location.href='contacts_add.php'"
+                class="bg-[#ffdcfe] hover:bg-[#fff] text-[#4e114a] font-medium  px-5 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
+                Add Contact
+            </button>
         </div>
 
         <div

@@ -16,6 +16,11 @@ require_once('Models/Contact.php');
 
 <body class="min-h-screen flex flex-col items-center justify-center ">
     <nav class=" w-full  px-10 mb-5 flex items-center justify-between ">
+        <button
+            onclick="window.location.href='features.html'"
+            class="bg-[#38003b] hover:bg-[#4e114a] text-white font-medium py-2 px-5 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
+            Back 
+        </button>
         <div class="flex items-center">
             <img 
                 src="./assets/zenstar2.png" 
@@ -23,11 +28,6 @@ require_once('Models/Contact.php');
                 class="h-12 w-12 rounded-lg object-cover border-2 border-white/20"
             />
         </div>
-        <button
-            onclick="window.location.href='home.php'"
-            class="bg-[#38003b] hover:bg-[#4e114a] text-white font-medium py-2 px-5 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
-            Back to Home
-        </button>
     </nav>
     <div class="bg-[#70507E] rounded-lg shadow-md p-8 max-w-md w-full">
         <h1 class="text-3xl font-semibold font-cinema text-center text-white mb-6">Chaldean Numerology</h1>

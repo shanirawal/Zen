@@ -18,20 +18,23 @@ require('Config/sessions.php');
 
 <body class="bg-[#1a0c1f] min-h-screen flex flex-col items-center justify-center p-4">
     <nav class=" w-full  px-10  flex items-center justify-between ">
+        <button
+            onclick="window.location.href='contacts.php'"
+            class="bg-[#38003b] hover:bg-[#4e114a] text-white font-medium py-2 px-5 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
+            Back 
+        </button>
         <div class="flex items-center">
             <img
                 src="./assets/zenstar2.png"
                 alt="Logo"
                 class="h-12 w-12 rounded-lg object-cover border-2 border-white/20" />
         </div>
-        <button
-            onclick="window.location.href='home.php'"
-            class="bg-[#38003b] hover:bg-[#4e114a] text-white font-medium py-2 px-5 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
-            Back to Home
-        </button>
     </nav>
 
     <div class="w-full max-w-2xl">
+
+        
+
         <div class="bg-[rgba(34,19,51,0.7)] backdrop-blur-md border border-[rgba(107,70,193,0.3)] rounded-2xl shadow-xl p-8">
             <div class="text-center mb-8">
                 <h1 class="text-3xl font-bold text-white mb-2 flex items-center justify-center">
@@ -42,6 +45,39 @@ require('Config/sessions.php');
                 </h1>
                 <p class="text-gray-300">Enter your contact details below</p>
             </div>
+
+            <!-- PHP Output Section -->
+        <div class="my-6">
+            <?php
+            // ---------- Insert Data ----------
+            if (isset($_POST['submit'])) {
+                $firstName = $_POST['fname'];
+                $lastName  = $_POST['lname'];
+                $birthDate = $_POST['dob'];
+                $phone     = $_POST['phone'];
+                $email     = $_POST['email'];
+
+                if (!empty($firstName) && !empty($lastName) && !empty($birthDate) && !empty($phone) && !empty($email)) {
+                    $conn = connectToDB();
+
+                    $insertQuery = "INSERT INTO contacts (user_id, firstName, lastName, birthDate, phone, email) 
+                                    VALUES ($sessionUserId, '$firstName', '$lastName', '$birthDate', '$phone', '$email')";
+
+                    $result = mysqli_query($conn, $insertQuery);
+
+                    if ($result) {
+                        echo '<div class="bg-green-900/50 border border-green-700 text-green-200 px-4 py-3 rounded-lg text-center">Data saved successfully!</div>';
+                    } else {
+                        echo '<div class="bg-red-900/50 border border-red-700 text-red-200 px-4 py-3 rounded-lg text-center">Error: ' . mysqli_error($conn) . '</div>';
+                    }
+
+                    closeConnection($conn);
+                } else {
+                    echo '<div class="bg-red-900/50 border border-red-700 text-red-200 px-4 py-3 rounded-lg text-center">Please enter all the values.</div>';
+                }
+            }
+            ?>
+        </div>
 
             <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" class="space-y-6">
                 <div>
@@ -76,7 +112,7 @@ require('Config/sessions.php');
                         type="text"
                         name="phone"
                         class="w-full px-4 py-3 bg-[rgba(26,12,31,0.6)] border border-[rgba(107,70,193,0.4)] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#6b46c1] focus:border-transparent transition-all"
-                        placeholder="(555) 123-4567" />
+                        placeholder="+91 12345 67890" />
                 </div>
 
                 <div>
@@ -105,39 +141,8 @@ require('Config/sessions.php');
                 </div>
             </form>
         </div>
+        
 
-        <!-- PHP Output Section -->
-        <div class="mt-6">
-            <?php
-            // ---------- Insert Data ----------
-            if (isset($_POST['submit'])) {
-                $firstName = $_POST['fname'];
-                $lastName  = $_POST['lname'];
-                $birthDate = $_POST['dob'];
-                $phone     = $_POST['phone'];
-                $email     = $_POST['email'];
-
-                if (!empty($firstName) && !empty($lastName) && !empty($birthDate) && !empty($phone) && !empty($email)) {
-                    $conn = connectToDB();
-
-                    $insertQuery = "INSERT INTO contacts (user_id, firstName, lastName, birthDate, phone, email) 
-                                    VALUES ($sessionUserId, '$firstName', '$lastName', '$birthDate', '$phone', '$email')";
-
-                    $result = mysqli_query($conn, $insertQuery);
-
-                    if ($result) {
-                        echo '<div class="bg-green-900/50 border border-green-700 text-green-200 px-4 py-3 rounded-lg text-center">Data saved successfully!</div>';
-                    } else {
-                        echo '<div class="bg-red-900/50 border border-red-700 text-red-200 px-4 py-3 rounded-lg text-center">Error: ' . mysqli_error($conn) . '</div>';
-                    }
-
-                    closeConnection($conn);
-                } else {
-                    echo '<div class="bg-red-900/50 border border-red-700 text-red-200 px-4 py-3 rounded-lg text-center">Please enter all the values.</div>';
-                }
-            }
-            ?>
-        </div>
     </div>
 </body>
 

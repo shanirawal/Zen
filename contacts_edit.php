@@ -27,20 +27,20 @@ require_once('Models/Contact.php');
     }
     ?>
     <nav class=" fixed top-0 left-0 w-full flex items-center justify-between px-4 py-3 bg-[#1a0c1f]/90 backdrop-blur-md z-50 border-b border-[rgba(107,70,193,0.3)] ">
-        <div class="flex items-center">
-            <img src="./assets/zenstar2.png" alt="Logo"
-                class="h-12 w-12 rounded-lg object-cover border-2 border-white/20" />
-        </div>
         <button onclick="window.location.href='contacts.php'"
             class="bg-[#38003b] hover:bg-[#4e114a] text-white font-medium py-2 px-5 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
             Back
         </button>
+        <div class="flex items-center">
+            <img src="./assets/zenstar2.png" alt="Logo"
+                class="h-12 w-12 rounded-lg object-cover border-2 border-white/20" />
+        </div>
     </nav>
 
     <div class="w-full max-w-2xl">
 
         <div
-            class="bg-[rgba(34,19,51,0.7)] backdrop-blur-md border border-[rgba(107,70,193,0.3)] rounded-2xl shadow-xl p-8">
+            class="bg-[rgba(34,19,51,0.7)] mt-[5rem] backdrop-blur-md border border-[rgba(107,70,193,0.3)] rounded-2xl shadow-xl p-8">
             <div class="text-center mb-8">
                 <h1 class="text-3xl font-bold text-white mb-2 flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-3 text-purple-300" fill="none"
